@@ -114,56 +114,56 @@ export default function Home() {
 
       <section className="w-full mt-10">
         <div className="container">
-          <h1 className="text-6xl font-bold">MENS</h1>
-          <div className="mt-10 w-full grid grid-cols-2 gap-5">
+          <h1 className="text-4xl lg:text-6xl font-bold">MENS</h1>
+          <div className="mt-5 lg:mt-10 w-full grid grid-cols-2 gap-5">
             <div className="w-full h-full">
-              <div className="w-full h-[240px] lg:h-[400px] overflow-hidden rounded-t-[100%]">
+              <div className="w-full h-[180px] lg:h-[400px] overflow-hidden rounded-t-[100%]">
                 <img
                   className="w-full h-full object-cover"
                   src="/image.jpg"
                   alt=""
                 />
               </div>
-              <div className="mt-2 flex justify-between">
+              <div className="mt-2 flex flex-col items-center justify-between">
                 <h3 className="text-[14px] lg:text-xl">CHANEL</h3>
                 <p className="text-[14px] lg:text-xl">1 000 000 USZ</p>
               </div>
             </div>
-            <div className="w-full h-full mt-10">
-              <div className="w-full h-[240px] lg:h-[400px] overflow-hidden rounded-t-[100%]">
+            <div className="w-full h-full mt-5 lg:mt-10">
+              <div className="w-full h-[180px] lg:h-[400px] overflow-hidden rounded-t-[100%]">
                 <img
                   className="w-full h-full object-cover"
                   src="/image.jpg"
                   alt=""
                 />
               </div>
-              <div className="mt-2 flex justify-between">
-                <h3 className="text-[12px] lg:text-xl">BLEU DE CHANEL</h3>
-                <p className="text-[12px] lg:text-xl">1 000 000 USZ</p>
+              <div className="mt-2 flex flex-col items-center justify-between ">
+                <h3 className="text-[14px] lg:text-xl">BLEU DE CHANEL</h3>
+                <p className="text-[14px] lg:text-xl">1 000 000 USZ</p>
               </div>
             </div>
             <div className="w-full h-full">
-              <div className="w-full h-[240px] lg:h-[400px] overflow-hidden rounded-t-[100%]">
+              <div className="w-full h-[180px] lg:h-[400px] overflow-hidden rounded-t-[100%]">
                 <img
                   className="w-full h-full object-cover"
                   src="/image.jpg"
                   alt=""
                 />
               </div>
-              <div className="mt-2 flex justify-between">
+              <div className="mt-2 flex flex-col items-center justify-between">
                 <h3 className="text-[14px] lg:text-xl">CHANEL</h3>
                 <p className="text-[14px] lg:text-xl">1 000 000 USZ</p>
               </div>
             </div>
-            <div className="w-full h-full mt-10">
-              <div className="w-full h-[240px] lg:h-[400px] overflow-hidden rounded-t-[100%]">
+            <div className="w-full h-full mt-5 lg:mt-10">
+              <div className="w-full h-[180px] lg:h-[400px] overflow-hidden rounded-t-[100%]">
                 <img
                   className="w-full h-full object-cover"
                   src="/image.jpg"
                   alt=""
                 />
               </div>
-              <div className="mt-2 flex justify-between">
+              <div className="mt-2 flex flex-col items-center justify-between">
                 <h3 className="text-[14px] lg:text-xl">CHANEL</h3>
                 <p className="text-[14px] lg:text-xl">1 000 000 USZ</p>
               </div>
