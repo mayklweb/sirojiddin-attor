@@ -9,13 +9,12 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-aboreto: var(--font-aboreto);
-  --font-gayathri: var(--font-gayathri)
-
+  --font-gayathri: var(--font-gayathri);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #FDFDFD;
+    --background: #fdfdfd;
     --foreground: #000000;
   }
 }
@@ -26,10 +25,15 @@ body {
   font-family: var(--font-gayathri);
 }
 
-
-.container{
+.container {
   max-width: 1440px;
   width: 100%;
   margin: 0px auto;
   padding: 0px 40px;
+}
+
+@media (max-width: 768px) {
+  .container{
+    padding: 0px 20px;
+  }
 }

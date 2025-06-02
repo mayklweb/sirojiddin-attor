@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${gayathri.variable} ${aboreto.variable}  antialiased`}>
-        <header className="bg-white">
+        <header className="bg-white hidden">
           <div className="container">
             <div className="py-4 flex items-center justify-between">
               <div className="flex flex-col items-center">
