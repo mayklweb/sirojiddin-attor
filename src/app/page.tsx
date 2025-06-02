@@ -206,7 +206,7 @@ export default function Home() {
             </div>
             <div className="w-full lg:w-[50%] h-full">
               <div className="w-full h-full lg:mt-20">
-                <div className="w-full h-[360px] overflow-hidden rounded-t-[100%]">
+                <div className="w-full h-[380px] overflow-hidden rounded-t-[100%]">
                   <img
                     className="w-full h-full object-cover"
                     src="/image.jpg"
