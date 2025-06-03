@@ -115,7 +115,7 @@ export default function Home() {
       <section className="w-full mt-10">
         <div className="container">
           <h1 className="text-4xl lg:text-6xl font-bold">MENS</h1>
-          <div className="mt-5 lg:mt-10 w-full grid grid-cols-2 gap-5">
+          <div className="mt-5 lg:mt-10 w-full grid grid-cols-2 lg:grid-cols-4 gap-5">
             <div className="w-full h-full">
               <div className="w-full h-[180px] lg:h-[400px] overflow-hidden rounded-t-[100%]">
                 <img
@@ -176,7 +176,7 @@ export default function Home() {
         <div className="container">
           <h1 className="text-4xl lg:text-6xl font-bold">TREND</h1>
           <div className="mt-5 lg:mt-10 w-full flex flex-col lg:flex-row gap-5">
-            <div className="w-full lg:w-[25%] flex lg:flex-row gap-5">
+            <div className="w-full lg:w-[25%] flex lg:flex-col gap-5">
               <div className="w-full h-full lg:mt-10">
                 <div className="w-full h-[180px] lg:h-[400px] overflow-hidden rounded-t-[100%]">
                   <img
@@ -206,7 +206,7 @@ export default function Home() {
             </div>
             <div className="w-full lg:w-[50%] h-full">
               <div className="w-full h-full lg:mt-20">
-                <div className="w-full h-[380px] overflow-hidden rounded-t-[100%]">
+                <div className="w-full h-[380px] lg:h-[780px] overflow-hidden rounded-t-[100%]">
                   <img
                     className="w-full h-full object-cover"
                     src="/image.jpg"
@@ -219,7 +219,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="w-full lg:w-[25%] flex lg:flex-row gap-5">
+            <div className="w-full lg:w-[25%] flex lg:flex-col gap-5">
               <div className="w-full h-full lg:mt-10">
                 <div className="w-full h-[180px] lg:h-[400px] overflow-hidden rounded-t-[100%]">
                   <img

@@ -29,20 +29,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${gayathri.variable} ${aboreto.variable}  antialiased`}>
-        <header className="bg-white hidden">
+        <header className="bg-white">
           <div className="container">
-            <div className="py-4 flex items-center justify-between">
+            <div className="py-4 flex items-center justify-center">
               <div className="flex flex-col items-center">
-                <h1 className="font-aboreto text-2xl">SUROJIDDIN</h1>
-                <p className="font-aboreto text-2xl">ATTOR</p>
+                <h1 className="font-aboreto text-xl lg:text-2xl">SUROJIDDIN</h1>
+                <p className="font-aboreto text-xl lg:text-2xl">ATTOR</p>
               </div>
-              <div className="text-xl flex gap-4">
+              <div className="text-xl lg:flex gap-4 hidden">
                 <Link href={"/"}>MENS</Link>
                 <Link href={"/"}>WOMENS</Link>
                 <Link href={"/"}>TRENDS</Link>
                 <Link href={"/"}>SEASONS</Link>
               </div>
-              <div className="flex gap-4">
+              <div className="lg:flex gap-4 hidden">
                 <button className="cursor-pointer">
                   <Search width={26} height={26} strokeWidth={1.5} />
                 </button>
