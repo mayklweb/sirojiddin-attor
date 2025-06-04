@@ -257,7 +257,7 @@ export default function Home() {
           <div className="mt-5 lg:mt-10 w-full flex flex-col lg:flex-row gap-5">
             <div className="w-full lg:w-[25%] flex lg:flex-col gap-5">
               <div className="w-full h-full lg:mt-10">
-                <div className="w-full h-[180px] lg:h-[400px] overflow-hidden rounded-[100%]">
+                <div className="w-full h-[180px] lg:h-[400px] overflow-hidden rounded-b-[100%]">
                   <img
                     className="w-full h-full object-cover"
                     src="/image.jpg"
@@ -270,7 +270,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full h-full lg:mt-10">
-                <div className="w-full h-[180px] lg:h-[400px] overflow-hidden rounded-[100%]">
+                <div className="w-full h-[180px] lg:h-[400px] overflow-hidden rounded-b-[100%]">
                   <img
                     className="w-full h-full object-cover"
                     src="/image.jpg"
@@ -300,7 +300,7 @@ export default function Home() {
             </div>
             <div className="w-full lg:w-[25%] flex lg:flex-col gap-5">
               <div className="w-full h-full lg:mt-10">
-                <div className="w-full h-[180px] lg:h-[400px] overflow-hidden rounded-[100%]">
+                <div className="w-full h-[180px] lg:h-[400px] overflow-hidden rounded-t-[100%]">
                   <img
                     className="w-full h-full object-cover"
                     src="/image.jpg"
@@ -313,7 +313,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full h-full lg:mt-10">
-                <div className="w-full h-[180px] lg:h-[400px] overflow-hidden rounded-[100%]">
+                <div className="w-full h-[180px] lg:h-[400px] overflow-hidden rounded-t-[100%]">
                   <img
                     className="w-full h-full object-cover"
                     src="/image.jpg"
