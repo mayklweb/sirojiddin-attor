@@ -1,7 +1,9 @@
 export default function Home() {
   return (
     <>
-      <section></section>
+      <section>
+        <video autoPlay loop muted className="w-full h-[80vh] object-cover" src="/TomFord.mp4"></video>
+      </section>
 
       <section className="w-full mt-10 hidden">
         <div className="container">
