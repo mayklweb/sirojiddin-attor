@@ -16,14 +16,14 @@ export default function Home() {
   return (
     <>
       <section>
-        <div className="w-full h-[76vh] overflow-hidden flex items-center">
+        <div className="w-screen h-[76vh] overflow-hidden flex items-center justify-center">
           <video
             ref={videoRef}
             autoPlay
             muted
             loop
             playsInline
-            className="w-full h-[96vh] object-cover"
+            className="w-screen h-[96vh] object-cover"
           >
             <source src="/TomFord.mp4" type="video/mp4" />
           </video>
