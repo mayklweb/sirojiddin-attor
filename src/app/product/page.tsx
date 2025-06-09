@@ -18,7 +18,7 @@ export default function Product() {
           <div>
             <h1 className="text-xl">Mercedes Benz Woman In Red</h1>
             <p className="">650 000 USZ</p>
-            <button className="w-full h-10 bg-[#090909]">SAVATGA</button>
+            <button className="w-full h-10 bg-[#090909] text-white flex items-center justify-center pt-2">SAVATGA</button>
           </div>
           <div>
             <h3>opisaniya</h3>
