@@ -26,15 +26,68 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // const menu = useRef(null);
+
+  // const closeOpen = () => {
+  //   if (openModal) {
+  //     setOpenModal(false);
+  //   } else {
+  //     setOpenModal(true);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   const isMobile = window.innerWidth < 1024;
+
+  // gsap.set(menu.current, {
+  //   opacity: 0,
+  //   y: 20,
+  // });
+
+  //   ScrollTrigger.create({
+  //     start: 0,
+  //     end: "max",
+  //     onUpdate: (self) => {
+  //       if (self.direction === 1) {
+  //         scrollAnim.play(); // scroll down
+  //       } else {
+  //         scrollAnim.reverse(); // scroll up
+  //       }
+  //     },
+  //   });
+
+  //   return () => {
+  //     ScrollTrigger.killAll();
+  //   };
+  // }, []);
+
   return (
     <html lang="en">
       <body className={`${gayathri.variable} ${aboreto.variable}  antialiased`}>
         <header className="bg-white">
           <div className="container">
-            <div className="py-4 flex items-center justify-center">
+            <div className="py-4 flex items-center justify-between">
+              <button
+                // onClick={() => closeOpen()}
+                // ref={menu}
+                className="lg:hidden relative w-8 h-2 focus:outline-none"
+                aria-label="Toggle menu"
+              >
+                <div className="relative w-full h-full flex justify-center items-center gap-2">
+                  {/* Top line */}
+                  <span className={`w-8 h-0.5 bg-black absolute transition-all duration-500 ease-in-out `}></span>
+
+                  <span className={`w-8 h-0.5 -mt-3 bg-black absolute transition-all duration-500 ease-in-out `}></span>
+                </div>
+              </button>
               <div className="flex flex-col items-center">
                 <h1 className="font-aboreto text-xl lg:text-2xl">SUROJIDDIN</h1>
                 <p className="font-aboreto text-xl lg:text-2xl">ATTOR</p>
+              </div>
+              <div>
+                <button className="cursor-pointer">
+                  <ShoppingBag width={26} height={26} strokeWidth={1.5} />
+                </button>
               </div>
               <div className="text-xl lg:flex gap-4 hidden">
                 <Link href={"/"}>MENS</Link>
