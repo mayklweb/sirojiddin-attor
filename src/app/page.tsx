@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useEffect, useRef } from "react";
 
@@ -16,16 +16,18 @@ export default function Home() {
   return (
     <>
       <section>
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover absolute top-[50%] left-[50%] -translate-y-2/4 -translate-x-2/4"
-        >
-          <source src="/TomFord.mp4" type="video/mp4" />
-        </video>
+        <div className="w-full h-[76vh] overflow-hidden flex items-center">
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-[96vh] object-cover"
+          >
+            <source src="/TomFord.mp4" type="video/mp4" />
+          </video>
+        </div>
       </section>
 
       <section className="w-full mt-10 hidden">
