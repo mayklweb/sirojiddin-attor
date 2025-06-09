@@ -6,7 +6,7 @@ export default function Product() {
     <section className="w-full">
       <div className="container">
         <div className="flex flex-col gap-2">
-          <div className="w-full h-[360px] rounded-t-[100%] overflow-hidden">
+          <div className="w-full h-auto rounded-t-[100%] overflow-hidden">
             <Image
               width={280}
               height={360}
