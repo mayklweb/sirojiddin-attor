@@ -1,8 +1,29 @@
+import { useEffect, useRef } from "react";
+
 export default function Home() {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.play().catch((err) => {
+        console.warn("Video autoplay failed:", err);
+      });
+    }
+  }, []);
   return (
     <>
       <section>
-        <video autoPlay loop muted className="w-full h-[80vh] object-cover" src="/TomFord.mp4"></video>
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover absolute top-[50%] left-[50%] -translate-y-2/4 -translate-x-2/4"
+        >
+          <source src="/TomFord.mp4" type="video/mp4" />
+        </video>
       </section>
 
       <section className="w-full mt-10 hidden">
