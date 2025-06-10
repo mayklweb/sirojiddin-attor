@@ -6,7 +6,7 @@ export default function Product() {
     <section className="w-full mt-5 lg:mt-10">
       <div className="max-w-[1024px] mx-auto px-5">
         <div className="w-full flex flex-col lg:flex-row gap-5">
-          <div className="w-full lg:w-1/2 h-[50vh] lg:h-[80vh] rounded-t-[100%] overflow-hidden">
+          <div className="w-full lg:w-1/2 h-[80vh] lg:h-[80vh] rounded-t-[100%] overflow-hidden">
             <Image
               width={500}
               height={600}
@@ -17,7 +17,7 @@ export default function Product() {
             />
           </div>
           <div className="w-full lg:w-1/2 flex flex-col justify-between">
-            <div className="w-full flex flex-col gap-5 mt-10">
+            <div className="w-full flex flex-col gap-4 lg:mt-10">
               <h1 className="text-xl lg:text-5xl">
                 Mercedes Benz Woman In Red
               </h1>
