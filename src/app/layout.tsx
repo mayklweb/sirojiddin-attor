@@ -64,9 +64,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${gayathri.variable} ${aboreto.variable}  antialiased`}>
-        <header className="bg-white relative ">
+        <header className="w-full bg-transparent fixed top-0 left-0 z-10 border-b-[1px] border-solid border-[#000000] before:absolute before:w-full before:h-full before:backdrop-blur-md">
           <div className="container">
-            <div className="py-4 flex items-center justify-between">
+            <div className="py-4 flex items-center justify-between relative">
               <button
                 // onClick={() => closeOpen()}
                 // ref={menu}
@@ -75,12 +75,16 @@ export default function RootLayout({
               >
                 <div className="relative w-full h-full flex justify-center items-center gap-2">
                   {/* Top line */}
-                  <span className={`w-8 h-0.5 bg-black absolute transition-all duration-500 ease-in-out `}></span>
+                  <span
+                    className={`w-8 h-0.5 bg-black absolute transition-all duration-500 ease-in-out `}
+                  ></span>
 
-                  <span className={`w-8 h-0.5 -mt-3 bg-black absolute transition-all duration-500 ease-in-out `}></span>
+                  <span
+                    className={`w-8 h-0.5 -mt-3 bg-black absolute transition-all duration-500 ease-in-out `}
+                  ></span>
                 </div>
               </button>
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center ">
                 <h1 className="font-aboreto text-xl lg:text-2xl">SUROJIDDIN</h1>
                 <p className="font-aboreto text-xl lg:text-2xl">ATTOR</p>
               </div>
@@ -90,10 +94,10 @@ export default function RootLayout({
                 </button>
               </div>
               <div className="text-xl lg:flex gap-4 hidden">
-                <Link href={"/"}>MENS</Link>
-                <Link href={"/"}>WOMENS</Link>
-                <Link href={"/"}>TRENDS</Link>
-                <Link href={"/"}>SEASONS</Link>
+                <Link href={"/category"}>MENS</Link>
+                <Link href={"/category"}>WOMENS</Link>
+                <Link href={"/category"}>TRENDS</Link>
+                <Link href={"/category"}>SEASONS</Link>
               </div>
               <div className="lg:flex gap-4 hidden">
                 <button className="cursor-pointer">

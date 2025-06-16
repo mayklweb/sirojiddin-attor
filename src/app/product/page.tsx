@@ -6,12 +6,12 @@ export default function Product() {
     <section className="w-full mt-5 lg:mt-10">
       <div className="max-w-[1024px] mx-auto px-5">
         <div className="w-full flex flex-col lg:flex-row gap-5">
-          <div className="w-full lg:w-1/2 h-[80vh] lg:h-[80vh] rounded-t-[100%] overflow-hidden">
+          <div className="w-full lg:w-1/2 h-[70vh] lg:h-[80vh] rounded-t-[100%] overflow-hidden">
             <Image
               width={500}
               height={600}
-              className="object-cover"
-              // className="w-full h-full "
+              // className="object-cover"
+              className="w-full h-full "
               src="/image.jpg"
               alt="Product Image"
             />
