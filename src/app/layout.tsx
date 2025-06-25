@@ -63,7 +63,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${gayathri.variable} ${aboreto.variable}  antialiased`}>
-        <header className=" w-full bg-transparent fixed top-0 left-0 z-10 border-b-[1px] border-solid border-[#000000] before:absolute before:w-full before:h-full before:backdrop-blur-3xl">
+        <header className="mix-blend-difference w-full bg-transparent fixed top-0 left-0 z-10 border-b-[1px] border-solid border-[#fff] before:absolute before:w-full before:h-full before:backdrop-blur-3xl">
           <div className="container">
             <div className="py-10 flex bg-transparent items-center justify-between relative ">
 
@@ -73,11 +73,11 @@ export default function RootLayout({
               >
                 <div className="relative w-full h-full flex justify-center items-center ">
                   <span
-                    className={`w-12 h-0.5 bg-black absolute transition-all duration-500 ease-in-out gap-2 mix-blend-difference`}
+                    className={`w-12 h-0.5 bg-white absolute transition-all duration-500 ease-in-out gap-2 mix-blend-difference`}
                   ></span>
 
                   <span
-                    className={`w-12 h-0.5 -mt-3 bg-black absolute transition-all duration-500 ease-in-out gap-2 mix-blend-difference`}
+                    className={`w-12 h-0.5 -mt-3 bg-white absolute transition-all duration-500 ease-in-out gap-2 mix-blend-difference`}
                   ></span>
                 </div>
               </button>
@@ -108,13 +108,13 @@ export default function RootLayout({
 
               <div className="lg:flex gap-4 hidden">
                 <button className="cursor-pointer">
-                  <Search width={26} height={26} strokeWidth={1.5} />
+                  <Search color="#ffffff" width={26} height={26} strokeWidth={1.5} />
                 </button>
                 <button className="cursor-pointer">
-                  <ShoppingBag width={26} height={26} strokeWidth={1.5} />
+                  <ShoppingBag color="#ffffff" width={26} height={26} strokeWidth={1.5} />
                 </button>
                 <button className="cursor-pointer">
-                  <Instagram width={26} height={26} strokeWidth={1.5} />
+                  <Instagram color="#ffffff" width={26} height={26} strokeWidth={1.5} />
                 </button>
               </div>
             </div>
