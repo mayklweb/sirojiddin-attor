@@ -63,30 +63,29 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${gayathri.variable} ${aboreto.variable}  antialiased`}>
-        <header className=" w-full bg-white/10 fixed top-0 left-0 z-10 border-b-[1px] border-solid border-[#fff] before:absolute before:w-full before:h-full before:backdrop-blur-[1000px]">
+        <header className=" w-full bg-transparent fixed top-0 left-0 z-10 border-b-[1px] border-solid border-[#fff] before:absolute before:w-full before:h-full before:backdrop-blur-3xl">
           <div className="container">
             <div className="py-10 flex bg-transparent items-center justify-between relative ">
-
               <button
                 className=" relative w-8 h-2 focus:outline-none"
                 aria-label="Toggle menu"
               >
                 <div className="relative w-full h-full flex justify-center items-center ">
                   <span
-                    className={`w-12 h-0.5 bg-white absolute transition-all duration-500 ease-in-out gap-2 mix-blend-difference`}
+                    className={`w-12 h-0.5 bg-black absolute transition-all duration-500 ease-in-out gap-2`}
                   ></span>
 
                   <span
-                    className={`w-12 h-0.5 -mt-3 bg-white absolute transition-all duration-500 ease-in-out gap-2 mix-blend-difference`}
+                    className={`w-12 h-0.5 -mt-3 bg-black absolute transition-all duration-500 ease-in-out gap-2`}
                   ></span>
                 </div>
               </button>
 
               <div className="flex flex-col items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                <h1 className="font-aboreto text-lg lg:text-2xl text-white mix-blend-difference">
+                <h1 className="font-aboreto text-lg lg:text-2xl text-black">
                   SUROJIDDIN
                 </h1>
-                <p className="font-aboreto text-lg lg:text-2xl text-white mix-blend-difference">
+                <p className="font-aboreto text-lg lg:text-2xl text-black">
                   ATTOR
                 </p>
               </div>
@@ -98,7 +97,7 @@ export default function RootLayout({
               </div> */}
 
               {/* <div className="text-xl flex gap-4 ">
-                <Link className="mix-blend-difference" href={"/category"}>
+                <Link className=" href={"/category"}>
                   MENS
                 </Link>
                 <Link href={"/category"}>WOMENS</Link>
@@ -108,13 +107,28 @@ export default function RootLayout({
 
               <div className="lg:flex gap-4">
                 <button className="cursor-pointer">
-                  <Search color="#ffffff" width={26} height={26} strokeWidth={1.5} />
+                  <Search
+                    color="#ffffff"
+                    width={26}
+                    height={26}
+                    strokeWidth={1.5}
+                  />
                 </button>
                 <button className="cursor-pointer">
-                  <ShoppingBag color="#ffffff" width={26} height={26} strokeWidth={1.5} />
+                  <ShoppingBag
+                    color="#ffffff"
+                    width={26}
+                    height={26}
+                    strokeWidth={1.5}
+                  />
                 </button>
                 <button className="cursor-pointer">
-                  <Instagram color="#ffffff" width={26} height={26} strokeWidth={1.5} />
+                  <Instagram
+                    color="#ffffff"
+                    width={26}
+                    height={26}
+                    strokeWidth={1.5}
+                  />
                 </button>
               </div>
             </div>
