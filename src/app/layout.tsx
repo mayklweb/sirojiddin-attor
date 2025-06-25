@@ -64,27 +64,26 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${gayathri.variable} ${aboreto.variable}  antialiased`}>
-        <header className="mix-blend-difference w-full bg-transparent fixed top-0 left-0 z-10 border-b-[1px] border-solid border-[#000000] before:absolute before:w-full before:h-full before:backdrop-blur-md">
+        <header className=" w-full bg-transparent fixed top-0 left-0 z-10 border-b-[1px] border-solid border-[#000000] before:absolute before:w-full before:h-full before:backdrop-blur-md">
           <div className="container">
-            <div className="py-4 flex bg-transparent items-center justify-between relative">
+            <div className="py-10 flex bg-transparent items-center justify-between relative ">
+
               <button
-                // onClick={() => closeOpen()}
-                // ref={menu}
-                className="lg:hidden relative w-8 h-2 focus:outline-none"
+                className=" relative w-8 h-2 focus:outline-none"
                 aria-label="Toggle menu"
               >
-                <div className="relative w-full h-full flex justify-center items-center gap-2 mix-blend-difference">
-                  {/* Top line */}
+                <div className="relative w-full h-full flex justify-center items-center ">
                   <span
-                    className={`w-8 h-0.5 bg-black absolute transition-all duration-500 ease-in-out `}
+                    className={`w-12 h-0.5 bg-black absolute transition-all duration-500 ease-in-out gap-2 mix-blend-difference`}
                   ></span>
 
                   <span
-                    className={`w-8 h-0.5 -mt-3 bg-black absolute transition-all duration-500 ease-in-out `}
+                    className={`w-12 h-0.5 -mt-3 bg-black absolute transition-all duration-500 ease-in-out gap-2 mix-blend-difference`}
                   ></span>
                 </div>
               </button>
-              <div className="flex flex-col items-center">
+
+              <div className="flex flex-col items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                 <h1 className="font-aboreto text-lg lg:text-2xl text-white mix-blend-difference">
                   SUROJIDDIN
                 </h1>
@@ -93,19 +92,21 @@ export default function RootLayout({
                 </p>
               </div>
 
-              <div>
+              {/* <div>
                 <button className="cursor-pointer">
                   <ShoppingBag width={26} height={26} strokeWidth={1.5} />
                 </button>
-              </div>
-              <div className="text-xl flex gap-4 ">
+              </div> */}
+
+              {/* <div className="text-xl flex gap-4 ">
                 <Link className="mix-blend-difference" href={"/category"}>
                   MENS
                 </Link>
                 <Link href={"/category"}>WOMENS</Link>
                 <Link href={"/category"}>TRENDS</Link>
                 <Link href={"/category"}>SEASONS</Link>
-              </div>
+              </div> */}
+
               <div className="lg:flex gap-4 hidden">
                 <button className="cursor-pointer">
                   <Search width={26} height={26} strokeWidth={1.5} />
