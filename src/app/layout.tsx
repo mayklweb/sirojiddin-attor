@@ -66,7 +66,7 @@ export default function RootLayout({
       <body className={`${gayathri.variable} ${aboreto.variable}  antialiased`}>
         <header className="w-full bg-transparent fixed top-0 left-0 z-10 border-b-[1px] border-solid border-[#000000] before:absolute before:w-full before:h-full before:backdrop-blur-md">
           <div className="container">
-            <div className="py-4 flex items-center justify-between relative">
+            <div className="py-4 flex bg-transparent items-center justify-between relative">
               <button
                 // onClick={() => closeOpen()}
                 // ref={menu}
@@ -84,17 +84,22 @@ export default function RootLayout({
                   ></span>
                 </div>
               </button>
-              <div className="flex flex-col items-center ">
-                <h1 className="font-aboreto text-xl lg:text-2xl">SUROJIDDIN</h1>
-                <p className="font-aboreto text-xl lg:text-2xl">ATTOR</p>
+              <div className="flex flex-col items-center">
+                <h1 className="font-aboreto text-lg lg:text-2xl text-white mix-blend-difference">
+                  SUROJIDDIN
+                </h1>
+                <p className="font-aboreto text-lg lg:text-2xl text-white mix-blend-difference">
+                  ATTOR
+                </p>
               </div>
+
               <div>
                 <button className="cursor-pointer">
                   <ShoppingBag width={26} height={26} strokeWidth={1.5} />
                 </button>
               </div>
               <div className="text-xl lg:flex gap-4 hidden">
-                <Link href={"/category"}>MENS</Link>
+                <Link className="mix-blend-difference" href={"/category"}>MENS</Link>
                 <Link href={"/category"}>WOMENS</Link>
                 <Link href={"/category"}>TRENDS</Link>
                 <Link href={"/category"}>SEASONS</Link>
