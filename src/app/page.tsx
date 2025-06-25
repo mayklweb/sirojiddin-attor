@@ -25,7 +25,7 @@ export default function Home() {
             playsInline
             className="w-screen h-[125vh] object-cover"
           >
-            <source src="/TomFord.mp4" type="video/mp4" />
+            <source src="/m.mp4" type="video/mp4" />
           </video>
         </div>
       </section>
