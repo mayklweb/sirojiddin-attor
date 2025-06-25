@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       <section>
-        <div className="w-full h-[100vh] overflow-hidden flex items-center justify-center">
+        <div className="w-full h-[100vh] overflow-hidden flex items-center justify-center ">
           <video
             ref={videoRef}
             autoPlay

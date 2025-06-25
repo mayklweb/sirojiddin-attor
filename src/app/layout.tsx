@@ -64,7 +64,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${gayathri.variable} ${aboreto.variable}  antialiased`}>
-        <header className="w-full bg-transparent fixed top-0 left-0 z-10 border-b-[1px] border-solid border-[#000000] before:absolute before:w-full before:h-full before:backdrop-blur-md">
+        <header className="mix-blend-difference w-full bg-transparent fixed top-0 left-0 z-10 border-b-[1px] border-solid border-[#000000] before:absolute before:w-full before:h-full before:backdrop-blur-md">
           <div className="container">
             <div className="py-4 flex bg-transparent items-center justify-between relative">
               <button
@@ -73,7 +73,7 @@ export default function RootLayout({
                 className="lg:hidden relative w-8 h-2 focus:outline-none"
                 aria-label="Toggle menu"
               >
-                <div className="relative w-full h-full flex justify-center items-center gap-2">
+                <div className="relative w-full h-full flex justify-center items-center gap-2 mix-blend-difference">
                   {/* Top line */}
                   <span
                     className={`w-8 h-0.5 bg-black absolute transition-all duration-500 ease-in-out `}
@@ -98,8 +98,10 @@ export default function RootLayout({
                   <ShoppingBag width={26} height={26} strokeWidth={1.5} />
                 </button>
               </div>
-              <div className="text-xl lg:flex gap-4 hidden">
-                <Link className="mix-blend-difference" href={"/category"}>MENS</Link>
+              <div className="text-xl flex gap-4 ">
+                <Link className="mix-blend-difference" href={"/category"}>
+                  MENS
+                </Link>
                 <Link href={"/category"}>WOMENS</Link>
                 <Link href={"/category"}>TRENDS</Link>
                 <Link href={"/category"}>SEASONS</Link>
