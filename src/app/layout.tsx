@@ -63,7 +63,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${gayathri.variable} ${aboreto.variable}  antialiased`}>
-        <header className="mix-blend-difference w-full bg-white/10 fixed top-0 left-0 z-10 border-b-[1px] border-solid border-[#fff] before:absolute before:w-full before:h-full before:backdrop-blur-3xl">
+        <header className=" w-full bg-white/10 fixed top-0 left-0 z-10 border-b-[1px] border-solid border-[#fff] before:absolute before:w-full before:h-full before:backdrop-blur-[1000px]">
           <div className="container">
             <div className="py-10 flex bg-transparent items-center justify-between relative ">
 
