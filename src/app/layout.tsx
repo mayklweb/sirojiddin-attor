@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Aboreto, Gayathri } from "next/font/google";
 import "./globals.css";
 import { Instagram, Search, ShoppingBag } from "lucide-react";
-import Link from "next/link";
 
 const gayathri = Gayathri({
   variable: "--font-gayathri",
