@@ -63,7 +63,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${gayathri.variable} ${aboreto.variable}  antialiased`}>
-        <header className=" w-full bg-transparent fixed top-0 left-0 z-10 border-b-[1px] border-solid border-[#fff] before:absolute before:w-full before:h-full before:backdrop-blur-3xl">
+        <header className=" w-full bg-transparent fixed top-0 left-0 z-10 border-b-[1px] border-solid border-black before:absolute before:w-full before:h-full before:backdrop-blur-3xl">
           <div className="container">
             <div className="py-10 flex bg-transparent items-center justify-between relative ">
               <button
@@ -108,7 +108,6 @@ export default function RootLayout({
               <div className="lg:flex gap-4">
                 <button className="cursor-pointer">
                   <Search
-                    color="#ffffff"
                     width={26}
                     height={26}
                     strokeWidth={1.5}
@@ -116,7 +115,6 @@ export default function RootLayout({
                 </button>
                 <button className="cursor-pointer">
                   <ShoppingBag
-                    color="#ffffff"
                     width={26}
                     height={26}
                     strokeWidth={1.5}
@@ -124,7 +122,6 @@ export default function RootLayout({
                 </button>
                 <button className="cursor-pointer">
                   <Instagram
-                    color="#ffffff"
                     width={26}
                     height={26}
                     strokeWidth={1.5}
@@ -142,3 +139,4 @@ export default function RootLayout({
     </html>
   );
 }
+ 
