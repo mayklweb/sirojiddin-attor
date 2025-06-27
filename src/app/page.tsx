@@ -75,7 +75,7 @@ export default function Home() {
       <section>
         <div className="w-full h-[100vh] overflow-hidden flex items-center justify-center">
           <div className="w-full h-full flex items-end justify-center relative">
-            <div className="w-1/3 h-[80%] rounded-t-full overflow-hidden relative flex z-[3]">
+            <div className="w-2/3 lg:w-1/3 h-[80%] rounded-t-full overflow-hidden relative flex z-[3]">
               <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-[1]">
                 <Image
                   width={1000}
@@ -96,7 +96,7 @@ export default function Home() {
             </div>
             <div className="w-full h-full absolute top-0 left-0 flex items-center justify-evenly z-[3] mix-blend-difference">
               <div className="h-full flex items-center justify-evenly flex-col">
-                <h1 className="font-cormorant-garamond text-7xl text-white italic tracking-tight">
+                <h1 className="font-cormorant-garamond text-2xl lg:text-6xl text-white italic tracking-tight">
                   Har bir iforda o‘ziga xoslik <br /> Biz bilan go‘zallikni his
                   eting!
                 </h1>
@@ -104,7 +104,7 @@ export default function Home() {
               </div>
               <div className="h-full flex items-center justify-between flex-col">
                 <p></p>
-                <h1 className="mb-14 font-cormorant-garamond text-7xl text-white italic tracking-tight">
+                <h1 className="mb-14 font-cormorant-garamond text-2xl lg:text-6xl text-white italic tracking-tight">
                   Nafosat va joziba <br /> har bir tomchisida!
                 </h1>
               </div>
