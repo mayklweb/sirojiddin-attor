@@ -10,6 +10,7 @@
   --color-foreground: var(--foreground);
   --font-aboreto: var(--font-aboreto);
   --font-gayathri: var(--font-gayathri);
+  --font-cormorant-garamond: var(--font-cormorant-garamond);
 }
 
 @media (prefers-color-scheme: dark) {

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Aboreto, Gayathri } from "next/font/google";
+import { Aboreto, Gayathri, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import { Instagram, Search, ShoppingBag } from "lucide-react";
 
@@ -11,6 +11,12 @@ const gayathri = Gayathri({
 
 const aboreto = Aboreto({
   variable: "--font-aboreto",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
+const cormorantGaramond = Cormorant_Garamond({
+  variable: "--font-cormorant-garamond",
   subsets: ["latin"],
   weight: ["400"],
 });
@@ -62,7 +68,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${gayathri.variable} ${aboreto.variable}  antialiased`}>
+      <body className={`${gayathri.variable} ${aboreto.variable} ${cormorantGaramond.variable} antialiased`}>
         <header className=" w-full bg-transparent fixed top-0 left-0 z-10 border-b-[1px] border-solid border-black before:absolute before:w-full before:h-full before:backdrop-blur-3xl">
           <div className="container">
             <div className="py-10 flex bg-transparent items-center justify-between relative ">
@@ -131,7 +137,7 @@ export default function RootLayout({
             </div>
           </div>
         </header>
-        <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+        <main className="flex flex-col">
           {children}
         </main>
         <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"></footer>
