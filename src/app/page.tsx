@@ -38,7 +38,7 @@ export default function Home() {
         x: "100%",
         duration: 3,
       },
-      "2"
+      "1.2"
     );
 
     tl.to(
@@ -47,15 +47,14 @@ export default function Home() {
         x: "-100%",
         duration: 3,
       },
-      "2"
+      "1.2"
     );
 
     return () => {
       ScrollTrigger.killAll();
     };
   }, []);
-
-  return (
+   return (
     <>
       {/* <section>
         <div className="w-full h-[100vh] overflow-hidden flex items-center justify-center ">
@@ -70,10 +69,10 @@ export default function Home() {
             <source src="/m.mp4" type="video/mp4" />
           </video>
         </div>
-      </section> */}
+      </section> */}npm
 
       <section>
-        <div className="w-full h-[100dvh] overflow-hidden flex items-center justify-center">
+        <div className="w-full h-[100vh] overflow-hidden flex items-center justify-center">
           <div className="w-full h-full flex items-center lg:items-end justify-center relative">
             <div className="w-10/12 lg:w-1/3 h-[60%] lg:h-[80%] rounded-t-full overflow-hidden relative flex z-[3]">
               <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-[1]">
