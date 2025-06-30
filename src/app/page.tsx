@@ -1,5 +1,7 @@
 "use client";
+import { log } from "console";
 import gsap from "gsap";
+import { LogOut } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
@@ -39,6 +41,70 @@ export default function Home() {
     );
   }, []);
 
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const items = gsap.utils.toArray<HTMLElement>(".logo-item");
+      const itemWidth = items[0]?.offsetWidth || 200;
+      const totalWidth = itemWidth * items.length;
+
+      // Set initial position
+      gsap.set(items, {
+        x: (_, i) => i * itemWidth,
+      });
+
+      // Infinite loop animation
+      gsap.to(items, {
+        x: `-=${itemWidth * logos.length}`,
+        duration: 20, // slower = smoother
+        ease: "linear",
+        repeat: -1,
+        modifiers: {
+          x: (x) => `${parseFloat(x) % totalWidth}px`,
+        },
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
+
+  const logos = [
+    {
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsvCtsMoSgohb1s2BzErTa5aHK2EsKyDZvog&s",
+      name: "Logo 1",
+      url: "https://example.com/logo1",
+    },
+    {
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCrpA_vzHhtBd6gIDmXqxHVsTDFujxXb3WhQ&s",
+      name: "Logo 2",
+      url: "https://example.com/logo2",
+    },
+
+    {
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbe9KKiHWbngm9kNhSWZgAQpkpOwlAJ1ze8A&s",
+      name: "Logo 3",
+      url: "https://example.com/logo3",
+    },
+
+    {
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsvCtsMoSgohb1s2BzErTa5aHK2EsKyDZvog&s",
+      name: "Logo 5",
+      url: "https://example.com/logo5",
+    },
+    {
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCrpA_vzHhtBd6gIDmXqxHVsTDFujxXb3WhQ&s",
+      name: "Logo 6",
+      url: "https://example.com/logo6",
+    },
+    {
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbe9KKiHWbngm9kNhSWZgAQpkpOwlAJ1ze8A&s",
+      name: "Logo 7",
+      url: "https://example.com/logo7",
+    },
+  ];
+
   return (
     <>
       <section>
@@ -66,11 +132,33 @@ export default function Home() {
               </div>
               <div className="h-full flex items-center justify-between flex-col">
                 <p></p>
-                <h1 className="mb-14 font-cormorant-garamond text-2xl lg:text-6xl text-white italic tracking-tight">
+                <h1 className="mb-14 text-center font-cormorant-garamond text-2xl lg:text-6xl text-white italic tracking-tight">
                   Nafosat va joziba <br /> har bir tomchisida!
                 </h1>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="overflow-hidden w-full py-10 bg-white border-y-[1px] border-[#E6D8AD]">
+          <div ref={containerRef} className="flex w-max gap-10 ">
+            {/* ✅ Duplicate logos to loop */}
+            {[...logos, ...logos].map((logo, idx) => (
+              <div
+                key={idx}
+                className="logo-item w-[200px] h-[80px] shrink-0 flex items-center justify-center"
+              >
+                <Image
+                  src={logo.logo}
+                  alt={`Brand ${idx}`}
+                  width={200}
+                  height={80}
+                  className="object-contain"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -87,8 +175,8 @@ export default function Home() {
                   alt=""
                 />
               </div>
-              <div className="mt-2 flex justify-between items-center">
-                <h3 className="text-3xl">CHANEL</h3>
+              <div className="mt-2 flex justify-between items-center text-[#E6D8AD]">
+                <h3 className="text-3xl text-[#E6D8AD]">CHANEL</h3>
                 <p className="text-2xl">1 000 000 USZ</p>
               </div>
             </div>
