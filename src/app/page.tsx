@@ -1,7 +1,5 @@
 "use client";
-import { log } from "console";
 import gsap from "gsap";
-import { LogOut } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
