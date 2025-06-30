@@ -4,9 +4,8 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 export default function Home() {
-  const bannerRight = useRef<HTMLDivElement | null>(null);
-  const bannerLeft = useRef<HTMLDivElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const imageRef = useRef<HTMLImageElement | null>(null);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -18,65 +17,37 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    gsap.set([bannerRight.current, bannerLeft.current], {
-      x: "0%",
-    });
+    const image = imageRef.current;
+    if (!image) return;
 
-    const tl = gsap.timeline({
-      defaults: {
-        delay: 0.5,
-        duration: 2,
+    gsap.fromTo(
+      image,
+      {
+        clipPath: "polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%)",
+      },
+      {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         ease: "power3.inOut",
-        stagger: 1,
-        smoothOrigin: true,
-      },
-    });
-
-    tl.to(
-      bannerRight.current,
-      {
-        x: "100%",
         duration: 3,
-      },
-      "1.2"
+        scrollTrigger: {
+          trigger: image,
+          start: "top center",
+          end: "bottom top",
+          toggleActions: "restart none none none",
+        },
+      }
     );
-
-    tl.to(
-      bannerLeft.current,
-      {
-        x: "-100%",
-        duration: 3,
-      },
-      "1.2"
-    );
-
-    return () => {
-      ScrollTrigger.killAll();
-    };
   }, []);
-   return (
-    <>
-      {/* <section>
-        <div className="w-full h-[100vh] overflow-hidden flex items-center justify-center ">
-          <video
-            ref={videoRef}
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-screen h-[125vh] object-cover"
-          >
-            <source src="/m.mp4" type="video/mp4" />
-          </video>
-        </div>
-      </section> */}npm
 
+  return (
+    <>
       <section>
         <div className="w-full h-[100vh] overflow-hidden flex items-center justify-center">
           <div className="w-full h-full flex items-center lg:items-end justify-center relative">
             <div className="w-10/12 lg:w-1/3 h-[60%] lg:h-[80%] rounded-t-full overflow-hidden relative flex z-[3]">
               <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-[1]">
                 <Image
+                  ref={imageRef}
                   width={1000}
                   height={1000}
                   src="/image.jpg"
@@ -84,14 +55,6 @@ export default function Home() {
                   className="w-full h-full object-contaain rounded-t-full absolute top-0 left-0 z-[1]"
                 />
               </div>
-              <div
-                ref={bannerLeft}
-                className="w-1/2 h-screen bg-[#FDFDFD] absolute top-[-1] left-0 z-[2]"
-              ></div>
-              <div
-                ref={bannerRight}
-                className="w-1/2 h-screen bg-[#FDFDFD] absolute top-[-1] right-0 z-[2]"
-              ></div>
             </div>
             <div className="w-full h-full absolute top-0 left-0 flex flex-col lg:flex-row items-center justify-evenly z-[3] mix-blend-difference">
               <div className="h-full flex items-center justify-evenly flex-col">
