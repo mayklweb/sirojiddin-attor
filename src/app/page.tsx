@@ -37,6 +37,12 @@ export default function Home() {
         },
       }
     );
+
+    gsap.fromTo(
+      ".blur-target",
+      { filter: "blur(100px)", opacity: 0 },
+      { filter: "blur(0px)", opacity: 1, duration: 2, ease: "power3.out" }
+    );
   }, []);
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -113,56 +119,23 @@ export default function Home() {
                   ref={imageRef}
                   width={1000}
                   height={1000}
-                  src="/image.jpg"
+                  src="/parfume.png"
                   alt=""
                   className="w-full h-full object-contaain rounded-t-full absolute top-0 left-0 z-[1]"
                 />
               </div>
             </div>
-            <div className="w-full h-full absolute top-0 left-0 flex flex-col lg:flex-row items-center justify-evenly z-[3] mix-blend-difference">
+            <div className="w-full h-full absolute top-0 left-0 flex flex-col lg:flex-row items-center justify-around z-[3] mix-blend-difference">
               <div className="h-full flex items-center justify-evenly flex-col">
-                <div className="w-full h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <svg
-                    width="600"
-                    height="600"
-                    viewBox="0 0 600 600"
-                    className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center"
-                  >
-                
-                    <defs>
-                      <path
-                        id="halfArc"
-                        d="M 130,0 A 110,190 0 0,1 480,210"
-                        fill="none"
-                      />
-                    </defs>
-                    <text
-                      className="w-full h-full"
-                      fill="#fff"
-                      fontSize="44"
-                      fontFamily="'Cormorant Garamond', serif"
-                      textAnchor="middle"
-                    >
-                      <textPath
-                        href="#halfArc"
-                        startOffset="50%"
-                        textLength="580"
-                      >
-                        Go‘zallik ifori bilan boshlanadi.
-                      </textPath>
-                    </text>
-                  </svg>
-                </div>
-                {/* <h1 className="font-cormorant-garamond text-4xl text-center lg:text-6xl rounded-full inline-block text-white italic tracking-tight">
-                  Go‘zallik ifori bilan boshlanadi.
+                <h1 className="font-cormorant-garamond text-4xl text-center lg:text-6xl rounded-full inline-block text-white italic tracking-tight blur-target">
                   Har bir iforda o‘ziga xoslik <br /> Biz bilan go‘zallikni his
                   eting!
-                </h1> */}
+                </h1>
                 <p></p>
               </div>
               <div className="h-full flex items-center justify-between flex-col">
                 <p></p>
-                <h1 className="mb-14 text-center font-cormorant-garamond text-2xl lg:text-6xl text-white italic tracking-tight">
+                <h1 className="mb-14 text-center font-cormorant-garamond text-2xl lg:text-6xl text-white italic tracking-tight blur-target">
                   Nafosat va joziba <br /> har bir tomchisida!
                 </h1>
               </div>
