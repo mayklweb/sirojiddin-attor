@@ -75,7 +75,7 @@ export default function RootLayout({
           <div className="container">
             <div className="py-6 lg:py-10 flex bg-transparent items-center justify-between relative ">
               <button
-                className=" relative w-8 h-2 focus:outline-none"
+                className=" relative w-8 h-2 focus:outline-none cursor-pointer"
                 aria-label="Toggle menu"
               >
                 <div className="relative w-full h-full flex justify-center items-center ">

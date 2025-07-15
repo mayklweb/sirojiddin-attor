@@ -2,21 +2,20 @@
 import gsap from "gsap";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
   const imageRef = useRef<HTMLImageElement | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const infoImgRef = useRef<HTMLImageElement | null>(null);
+  const infoTextRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (video) {
-      video.play().catch((err) => {
-        console.warn("Video autoplay failed:", err);
-      });
-    }
-  }, []);
 
-  useEffect(() => {
     const image = imageRef.current;
     if (!image) return;
 
@@ -43,35 +42,81 @@ export default function Home() {
       { filter: "blur(100px)", opacity: 0 },
       { filter: "blur(0px)", opacity: 1, duration: 3, ease: "power3.out" }
     );
-  }, []);
 
-  const containerRef = useRef<HTMLDivElement>(null);
+    // const ctx = gsap.context(() => {
+    //   const items = gsap.utils.toArray<HTMLElement>(".logo-item");
+    //   const itemWidth = items[0]?.offsetWidth || 200;
+    //   const totalWidth = itemWidth * items.length;
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const items = gsap.utils.toArray<HTMLElement>(".logo-item");
-      const itemWidth = items[0]?.offsetWidth || 200;
-      const totalWidth = itemWidth * items.length;
+    //   // Set initial position
+    //   gsap.set(items, {
+    //     x: (_, i) => i * itemWidth,
+    //   });
 
-      // Set initial position
-      gsap.set(items, {
-        x: (_, i) => i * itemWidth,
-      });
+    //   // Infinite loop animation
+    //   gsap.to(items, {
+    //     x: `-=${itemWidth * logos.length}`,
+    //     duration: 20, // slower = smoother
+    //     ease: "linear",
+    //     repeat: -1,
+    //     modifiers: {
+    //       x: (x) => `${parseFloat(x) % totalWidth}px`,
+    //     },
+    //   });
+    // }, containerRef);
 
-      // Infinite loop animation
-      gsap.to(items, {
-        x: `-=${itemWidth * logos.length}`,
-        duration: 20, // slower = smoother
-        ease: "linear",
-        repeat: -1,
-        modifiers: {
-          x: (x) => `${parseFloat(x) % totalWidth}px`,
+
+    const categories = gsap.utils.toArray<HTMLElement>(".category");
+
+    categories.forEach((category, index) => {
+      gsap.from(category, {
+        // y: 60,
+        scale: 1.08,
+        opacity: 0,
+        duration: 2,
+        ease: "power3.out",
+        delay: index * 0.2,
+        scrollTrigger: {
+          trigger: category,
+          start: "top center",
+          toggleActions: "play none none none",
         },
       });
-    }, containerRef);
+    });
+
+
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top center",         // sahifa yuqorisidan boshlanadi
+          end: "+=1500",            // scroll qanchalik davom etadi
+          scrub: true,
+          pin: true,                // markazda qotadi
+          markers: false,           // true qilsang brauzerda joyini ko'rsatadi
+        },
+      });
+
+      // Text animatsiya: pastdan markazga chiqadi
+      tl.fromTo(
+        infoTextRef.current,
+        { y: 100, },
+        { y: 0, duration: 1 }
+      );
+
+      // Rasm animatsiya: pastdan chiqib zoom bo’ladi
+      tl.fromTo(
+        infoImgRef.current,
+        { y: 100, scale: 0.7, opacity: 0 },
+        { y: 0, scale: 1, opacity: 1, duration: 1 },
+        "-=0.8"
+      );
+    }, sectionRef);
 
     return () => ctx.revert();
+
   }, []);
+  
 
   const logos = [
     {
@@ -279,8 +324,8 @@ export default function Home() {
         <div className="container">
           <h1 className="text-4xl lg:text-6xl font-bold">MENS</h1>
           <div className="mt-5 lg:mt-10 w-full grid grid-cols-2 lg:grid-cols-4 gap-5">
-            <div className="w-full h-full">
-              <div className="w-full h-[180px] lg:h-[400px] overflow-hidden rounded-t-full">
+            <div className="w-full h-full category">
+              <div className="w-full h-[180px] lg:h-[440px] overflow-hidden rounded-full">
                 <img
                   className="w-full h-full object-cover"
                   src="/image.jpg"
@@ -292,8 +337,8 @@ export default function Home() {
                 <p className="text-[14px] lg:text-xl">1 000 000 USZ</p>
               </div>
             </div>
-            <div className="w-full h-full mt-5 lg:mt-10">
-              <div className="w-full h-[180px] lg:h-[400px] overflow-hidden rounded-t-full">
+            <div className="w-full h-full mt-5 lg:mt-10 category">
+              <div className="w-full h-[180px] lg:h-[440px] overflow-hidden rounded-full">
                 <img
                   className="w-full h-full object-cover"
                   src="/image.jpg"
@@ -305,8 +350,8 @@ export default function Home() {
                 <p className="text-[14px] lg:text-xl">1 000 000 USZ</p>
               </div>
             </div>
-            <div className="w-full h-full">
-              <div className="w-full h-[180px] lg:h-[400px] overflow-hidden rounded-t-full">
+            <div className="w-full h-full category">
+              <div className="w-full h-[180px] lg:h-[440px] overflow-hidden rounded-full">
                 <img
                   className="w-full h-full object-cover"
                   src="/image.jpg"
@@ -318,8 +363,8 @@ export default function Home() {
                 <p className="text-[14px] lg:text-xl">1 000 000 USZ</p>
               </div>
             </div>
-            <div className="w-full h-full mt-5 lg:mt-10">
-              <div className="w-full h-[180px] lg:h-[400px] overflow-hidden rounded-t-full">
+            <div className="w-full h-full mt-5 lg:mt-10 category">
+              <div className="w-full h-[180px] lg:h-[440px] overflow-hidden rounded-full">
                 <img
                   className="w-full h-full object-cover"
                   src="/image.jpg"
@@ -335,39 +380,22 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full mt-10">
+      <section  className="w-full mt-10">
         <div className="container">
-          {/* <h1 className="text-4xl lg:text-6xl font-bold">TREND</h1> */}
-          <div className="mt-5 lg:mt-10 w-full flex flex-col lg:flex-row gap-5">
-            <div className="w-full lg:w-[100%] flex lg:flex-col gap-5 items-center">
-              <h1 className="w-[1024px] text-4xl font-cormorant-garamond text-center italic">
-                Parfyum — bu inson tanasiga, kiyimiga yoki atrof-muhitga yoqimli
-                hid berish uchun ishlatiladigan suyuqlik bo‘lib, u turli xildagi
-                efir moylari, aromatik birikmalar, erituvchilar (odatda spirt),
-                va suvdan iborat bo‘ladi. Uning asosiy vazifasi – hid orqali
-                kayfiyatni ko‘tarish, xotiralarni uyg‘otish yoki shaxsiy uslubni
-                ifodalashdir.
+          <div ref={sectionRef} className="mt-5 lg:mt-20 w-full flex flex-col items-center gap-24 relative ">
+            <div className="w-full lg:w-[100%] flex lg:flex-col gap-5 items-center mix-blend-difference">
+              <h1 ref={infoTextRef} className=" text-8xl font-cormorant-garamond text-center italic tracking-tight">
+              Sizning iforingiz — bu siz haqingizdagi birinchi taassurot va eng oxirgi eslatma.
               </h1>
             </div>
 
-            {/* <div className="w-full lg:w-[30%] h-[380px] lg:h-[620px] overflow-hidden rounded-t-full">
+            <div ref={infoImgRef} className="w-full lg:w-[325px] h-[380px] lg:h-[480px] overflow-hidden rounded-full">
               <img
                 className="w-full h-full object-cover"
                 src="/image.jpg"
                 alt=""
               />
             </div>
-
-            <div className="w-full lg:w-[35%] flex lg:flex-col gap-5">
-              <h1 className="text-5xl font-cormorant-garamond text-justify italic">
-                Parfyumdan foydalanish tarixi qadimgi Misr, Hindiston va
-                Mesopotamiya davrlariga borib taqaladi. Dastlab u diniy
-                marosimlarda, keyinchalik esa qirollik zodagonlari orasida
-                ishlatilgan. Yevropada parfyum ayniqsa Frantsiyada mashhur
-                bo‘lgan, va hozir ham Frantsiya dunyodagi eng yirik parfyumeriya
-                markazlaridan biri hisoblanadi.
-              </h1>
-            </div> */}
           </div>
         </div>
       </section>
