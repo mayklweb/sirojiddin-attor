@@ -41,7 +41,7 @@ export default function Home() {
     gsap.fromTo(
       ".blur-target",
       { filter: "blur(100px)", opacity: 0 },
-      { filter: "blur(0px)", opacity: 1, duration: 2, ease: "power3.out" }
+      { filter: "blur(0px)", opacity: 1, duration: 3, ease: "power3.out" }
     );
   }, []);
 
