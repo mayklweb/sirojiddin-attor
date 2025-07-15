@@ -89,26 +89,25 @@ export default function Home() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top center",         // sahifa yuqorisidan boshlanadi
-          end: "+=1500",            // scroll qanchalik davom etadi
+          start: "center bottom",       // sahifa boshlanishi
+          end: "+=1000",          // scroll davomiyligi
           scrub: true,
-          pin: true,                // markazda qotadi
-          markers: false,           // true qilsang brauzerda joyini ko'rsatadi
+          pin: true,              // qotadi
+          markers: true,
         },
       });
 
-      // Text animatsiya: pastdan markazga chiqadi
-      tl.fromTo(
+      // Text: pastdan chiqib centerda qotadi
+      tl.to(
         infoTextRef.current,
-        { y: 100, },
-        { y: 0, duration: 1 }
+        {  zIndex: 2, duration: 1 }
       );
 
-      // Rasm animatsiya: pastdan chiqib zoom bo’ladi
+      // Image: pastdan chiqib zoom + centerda qotadi
       tl.fromTo(
         infoImgRef.current,
-        { y: 100, scale: 0.7, opacity: 0 },
-        { y: 0, scale: 1, opacity: 1, duration: 1 },
+        { y: 0, scale: 1, },
+        { y: -400, scale: 1.6, zIndex: 1, duration: 1 },
         "-=0.8"
       );
     }, sectionRef);
@@ -380,16 +379,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section  className="w-full mt-10">
+      <section  className="w-full mt-10 relative">
         <div className="container">
-          <div ref={sectionRef} className="mt-5 lg:mt-20 w-full flex flex-col items-center gap-24 relative ">
-            <div className="w-full lg:w-[100%] flex lg:flex-col gap-5 items-center mix-blend-difference">
+          <div ref={sectionRef} className="mt-5 lg:mt-20 w-full h-full flex flex-col items-center gap-24  ">
+            <div className="w-full lg:w-[100%] flex lg:flex-col gap-5 items-center mix-blend-difference ">
               <h1 ref={infoTextRef} className=" text-8xl font-cormorant-garamond text-center italic tracking-tight">
               Sizning iforingiz — bu siz haqingizdagi birinchi taassurot va eng oxirgi eslatma.
               </h1>
             </div>
 
-            <div ref={infoImgRef} className="w-full lg:w-[325px] h-[380px] lg:h-[480px] overflow-hidden rounded-full">
+            <div ref={infoImgRef} className="w-full lg:w-[325px] h-[380px] lg:h-[480px] overflow-hidden rounded-full ">
               <img
                 className="w-full h-full object-cover"
                 src="/image.jpg"
