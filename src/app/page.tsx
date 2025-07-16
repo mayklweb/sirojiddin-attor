@@ -89,26 +89,24 @@ export default function Home() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "center bottom",       // sahifa boshlanishi
-          end: "+=1000",          // scroll davomiyligi
+          start: "60% bottom",
+          end: "+=800",
           scrub: true,
-          pin: true,              // qotadi
+          pin: true,
           markers: true,
         },
       });
 
-      // Text: pastdan chiqib centerda qotadi
       tl.to(
         infoTextRef.current,
         {  zIndex: 2, duration: 1 }
       );
 
-      // Image: pastdan chiqib zoom + centerda qotadi
       tl.fromTo(
         infoImgRef.current,
         { y: 0, scale: 1, },
-        { y: -400, scale: 1.6, zIndex: 1, duration: 1 },
-        "-=0.8"
+        { y: -450, scale: 1.5, zIndex: 1, duration: 1 },
+        "-=0.6"
       );
     }, sectionRef);
 
@@ -379,22 +377,24 @@ export default function Home() {
         </div>
       </section>
 
-      <section  className="w-full mt-10 relative">
+      <section  className="w-full mt-10 relative ">
         <div className="container">
-          <div ref={sectionRef} className="mt-5 lg:mt-20 w-full h-full flex flex-col items-center gap-24  ">
-            <div className="w-full lg:w-[100%] flex lg:flex-col gap-5 items-center mix-blend-difference ">
-              <h1 ref={infoTextRef} className=" text-8xl font-cormorant-garamond text-center italic tracking-tight">
+          <div ref={sectionRef} className="mt-5 lg:mt-20 w-full h-full flex flex-col items-center gap-24 mix-blend-difference">
+            <div className="w-full lg:w-[100%] flex lg:flex-col gap-5 items-center">
+              <h1 ref={infoTextRef} className="w-full lg:w-[1120px] text-white text-4xl lg:text-8xl font-cormorant-garamond text-center italic tracking-tighter">
               Sizning iforingiz — bu siz haqingizdagi birinchi taassurot va eng oxirgi eslatma.
               </h1>
             </div>
 
+          <div>
             <div ref={infoImgRef} className="w-full lg:w-[325px] h-[380px] lg:h-[480px] overflow-hidden rounded-full ">
               <img
                 className="w-full h-full object-cover"
                 src="/image.jpg"
                 alt=""
-              />
+                />
             </div>
+          </div>
           </div>
         </div>
       </section>
@@ -402,7 +402,7 @@ export default function Home() {
       <section className="w-full mt-10">
         <div className="container">
           <h1 className="text-4xl lg:text-6xl font-bold">TREND</h1>
-          <div className="mt-5 lg:mt-10 w-full flex flex-col lg:flex-row gap-5">
+          {/* <div className="mt-5 lg:mt-10 w-full flex flex-col lg:flex-row gap-5">
             <div className="w-full lg:w-[30%] flex lg:flex-col gap-5">
               <div className="w-full h-full lg:mt-10">
                 <div className="w-full h-[180px] lg:h-[500px] overflow-hidden rounded-t-full">
@@ -473,6 +473,44 @@ export default function Home() {
                   <p className="text-[14px] lg:text-xl">1 000 000 USZ</p>
                 </div>
               </div>
+            </div>
+          </div> */}
+          <div className="grid grid-cols-3 lg:grid-cols-4 mt-5 lg:mt-10 w-full  gap-10">
+            <div className="w-full h-full rounded-full overflow-hidden">
+              <img src="/parfume.png" alt="" />
+            </div>
+            <div className="w-full h-full rounded-full overflow-hidden mt-10">
+              <img src="/parfume.png" alt="" />
+            </div>
+            <div className="w-full h-full rounded-full overflow-hidden">
+              <img src="/parfume.png" alt="" />
+            </div>
+            <div className="w-full h-full rounded-full overflow-hidden">
+              <img src="/parfume.png" alt="" />
+            </div>
+            <div className="w-full h-full rounded-full overflow-hidden">
+              <img src="/parfume.png" alt="" />
+            </div>
+            <div className="w-full h-full rounded-full overflow-hidden">
+              <img src="/parfume.png" alt="" />
+            </div>
+            <div className="w-full h-full rounded-full overflow-hidden">
+              <img src="/parfume.png" alt="" />
+            </div>
+            <div className="w-full h-full rounded-full overflow-hidden">
+              <img src="/parfume.png" alt="" />
+            </div>
+            <div className="w-full h-full rounded-full overflow-hidden">
+              <img src="/parfume.png" alt="" />
+            </div>
+            <div className="w-full h-full rounded-full overflow-hidden">
+              <img src="/parfume.png" alt="" />
+            </div>
+            <div className="w-full h-full rounded-full overflow-hidden">
+              <img src="/parfume.png" alt="" />
+            </div>
+            <div className="w-full h-full rounded-full overflow-hidden">
+              <img src="/parfume.png" alt="" />
             </div>
           </div>
         </div>
