@@ -8,11 +8,14 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
+
   const imageRef = useRef<HTMLImageElement | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const infoImgRef = useRef<HTMLImageElement | null>(null);
   const infoTextRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
+
+  const images = Array(12).fill("/parfume.png");
 
   useEffect(() => {
 
@@ -475,43 +478,48 @@ export default function Home() {
               </div>
             </div>
           </div> */}
-          <div className="grid grid-cols-3 lg:grid-cols-4 mt-5 lg:mt-10 w-full  gap-10">
-            <div className="w-full h-full rounded-full overflow-hidden">
-              <img src="/parfume.png" alt="" />
+ 
+          <div className="grid grid-cols-3 lg:grid-cols-4 gap-5 lg:gap-10">
+          {images.map((src, index) => {
+          let translateClass = "";
+
+          // 👇 Kichik ekranlar uchun (grid-cols-3):
+          if (window.innerWidth < 768) {
+            const col = index % 3;
+            if (col === 0) translateClass = "translate-y-1/4";
+            else if (col === 1) translateClass = "-translate-y-1/4";
+            else translateClass = "translate-y-1/6";
+          }
+
+          // 👇 Katta ekranlar uchun (grid-cols-4):
+          else {
+            const col = index % 4;
+            if (col === 0) translateClass = "translate-y-1/4";
+            else if (col === 1) translateClass = "-translate-y-1/4";
+            else if (col === 2) translateClass = "translate-y-1/4";
+            else translateClass = "-translate-y-1/4";
+          }
+
+          return (
+            <div
+              key={index}
+              className={`bg-white rounded-full overflow-hidden flex items-center justify-center shadow-lg transition-transform ${translateClass}`}
+            >
+              <img src={src} alt="perfume" className="w-full h-full object-cover" />
             </div>
-            <div className="w-full h-full rounded-full overflow-hidden mt-10">
-              <img src="/parfume.png" alt="" />
-            </div>
-            <div className="w-full h-full rounded-full overflow-hidden">
-              <img src="/parfume.png" alt="" />
-            </div>
-            <div className="w-full h-full rounded-full overflow-hidden">
-              <img src="/parfume.png" alt="" />
-            </div>
-            <div className="w-full h-full rounded-full overflow-hidden">
-              <img src="/parfume.png" alt="" />
-            </div>
-            <div className="w-full h-full rounded-full overflow-hidden">
-              <img src="/parfume.png" alt="" />
-            </div>
-            <div className="w-full h-full rounded-full overflow-hidden">
-              <img src="/parfume.png" alt="" />
-            </div>
-            <div className="w-full h-full rounded-full overflow-hidden">
-              <img src="/parfume.png" alt="" />
-            </div>
-            <div className="w-full h-full rounded-full overflow-hidden">
-              <img src="/parfume.png" alt="" />
-            </div>
-            <div className="w-full h-full rounded-full overflow-hidden">
-              <img src="/parfume.png" alt="" />
-            </div>
-            <div className="w-full h-full rounded-full overflow-hidden">
-              <img src="/parfume.png" alt="" />
-            </div>
-            <div className="w-full h-full rounded-full overflow-hidden">
-              <img src="/parfume.png" alt="" />
-            </div>
+          );
+        })}
+      </div>
+          </div>
+        
+      </section>
+
+      <section>
+        <div className="container mt-10">
+          <div>
+
+          <h1 className="text-[#DAC289] text-center text-6xl font-bold lg:text-6xl font-cormorant-garamond"><span className="italic">ABOUT  </span>  <span>  US</span></h1>
+          <div></div>
           </div>
         </div>
       </section>
