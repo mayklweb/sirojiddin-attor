@@ -49,49 +49,27 @@ export default function Home() {
       { filter: "blur(0px)", opacity: 1, duration: 3, ease: "power3.out" }
     );
 
-    // const ctx = gsap.context(() => {
-    //   const items = gsap.utils.toArray<HTMLElement>(".logo-item");
-    //   const itemWidth = items[0]?.offsetWidth || 200;
-    //   const totalWidth = itemWidth * items.length;
+    const ctx = gsap.context(() => {
+      const items = gsap.utils.toArray<HTMLElement>(".logo-item");
+      const itemWidth = items[0]?.offsetWidth || 200;
+      const totalWidth = itemWidth * items.length;
 
-    //   // Set initial position
-    //   gsap.set(items, {
-    //     x: (_, i) => i * itemWidth,
-    //   });
+      // Set initial position
+      gsap.set(items, {
+        x: (_, i) => i * itemWidth,
+      });
 
-    //   // Infinite loop animation
-    //   gsap.to(items, {
-    //     x: `-=${itemWidth * logos.length}`,
-    //     duration: 20, // slower = smoother
-    //     ease: "linear",
-    //     repeat: -1,
-    //     modifiers: {
-    //       x: (x) => `${parseFloat(x) % totalWidth}px`,
-    //     },
-    //   });
-    // }, containerRef);
-
-
-    const categories = gsap.utils.toArray<HTMLElement>(".category");
-
-    categories.forEach((category, index) => {
-      gsap.from(category, {
-        // y: 60,
-        scale: 1.08,
-        opacity: 0,
-        duration: 2,
-        ease: "power3.out",
-        delay: index * 0.2,
-        scrollTrigger: {
-          trigger: category,
-          start: "top center",
-          toggleActions: "play none none none",
+      // Infinite loop animation
+      gsap.to(items, {
+        x: `-=${itemWidth * logos.length}`,
+        duration: 20, // slower = smoother
+        ease: "linear",
+        repeat: -1,
+        modifiers: {
+          x: (x) => `${parseFloat(x) % totalWidth}px`,
         },
       });
-    });
 
-
-    const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -113,8 +91,26 @@ export default function Home() {
         { y: -450, scale: 1.5, zIndex: 1, duration: 1 },
         "-=0.6"
       );
-    }, sectionRef);
+    }, [containerRef, sectionRef]);
 
+
+    const categories = gsap.utils.toArray<HTMLElement>(".category");
+
+    categories.forEach((category, index) => {
+      gsap.from(category, {
+        // y: 60,
+        scale: 1.08,
+        opacity: 0,
+        duration: 2,
+        ease: "power3.out",
+        delay: index * 0.2,
+        scrollTrigger: {
+          trigger: category,
+          start: "top center",
+          toggleActions: "play none none none",
+        },
+      });
+    });
 
 
     return () => ctx.revert();
@@ -124,7 +120,6 @@ export default function Home() {
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
-      const images = Array(9).fill("/parfume.png");
     };
 
     handleResize(); // Initial state
@@ -338,7 +333,7 @@ export default function Home() {
       <section className="w-full mt-10">
         <div className="container">
           <h1 className="text-4xl lg:text-6xl font-bold">MENS</h1>
-          <div className="mt-5 lg:mt-10 w-full grid grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="mt-5 lg:mt-10 w-full grid grid-cols-2 lg:grid-cols-4 gap-10">
             <div className="w-full h-full category">
               <div className="w-full h-[180px] lg:h-[440px] overflow-hidden rounded-full">
                 <img
