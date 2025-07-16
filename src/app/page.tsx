@@ -1,7 +1,7 @@
 "use client";
 import gsap from "gsap";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 
@@ -15,6 +15,8 @@ export default function Home() {
   const infoTextRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+ 
   const images = Array(12).fill("/parfume.png");
 
   useEffect(() => {
@@ -113,9 +115,21 @@ export default function Home() {
       );
     }, sectionRef);
 
+
+
     return () => ctx.revert();
 
   }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize(); // Initial state
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isMobile]);
   
 
   const logos = [
@@ -484,7 +498,7 @@ export default function Home() {
           let translateClass = "";
 
           // 👇 Kichik ekranlar uchun (grid-cols-3):
-          if (window.innerWidth < 768) {
+          if (isMobile) {
             const col = index % 3;
             if (col === 0) translateClass = "translate-y-1/4";
             else if (col === 1) translateClass = "-translate-y-1/4";
