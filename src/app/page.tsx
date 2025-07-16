@@ -17,7 +17,8 @@ export default function Home() {
 
   const [isMobile, setIsMobile] = useState<boolean>(false);
  
-  const images = Array(12).fill("/parfume.png");
+  const images = Array(8).fill("/parfume.png");
+
 
   useEffect(() => {
 
@@ -95,10 +96,9 @@ export default function Home() {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "60% bottom",
-          end: "+=800",
+          end: "+=600",
           scrub: true,
           pin: true,
-          markers: true,
         },
       });
 
@@ -124,6 +124,7 @@ export default function Home() {
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
+      const images = Array(9).fill("/parfume.png");
     };
 
     handleResize(); // Initial state
@@ -416,82 +417,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full mt-10">
+      <section className="w-full">
         <div className="container">
-          <h1 className="text-4xl lg:text-6xl font-bold">TREND</h1>
-          {/* <div className="mt-5 lg:mt-10 w-full flex flex-col lg:flex-row gap-5">
-            <div className="w-full lg:w-[30%] flex lg:flex-col gap-5">
-              <div className="w-full h-full lg:mt-10">
-                <div className="w-full h-[180px] lg:h-[500px] overflow-hidden rounded-t-full">
-                  <img
-                    className="w-full h-full object-cover"
-                    src="/image.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="mt-2 flex flex-col items-center justify-between">
-                  <h3 className="text-[14px] lg:text-xl">CHANEL</h3>
-                  <p className="text-[14px] lg:text-xl">1 000 000 USZ</p>
-                </div>
-              </div>
-              <div className="w-full h-full lg:mt-10">
-                <div className="w-full h-[180px] lg:h-[500px] overflow-hidden rounded-t-full">
-                  <img
-                    className="w-full h-full object-cover"
-                    src="/image.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="mt-2 flex flex-col items-center justify-between">
-                  <h3 className="text-[14px] lg:text-xl">CHANEL</h3>
-                  <p className="text-[14px] lg:text-xl">1 000 000 USZ</p>
-                </div>
-              </div>
-            </div>
-            <div className="w-full lg:w-[40%] h-full flex items-center justify-center">
-              <div className="w-full h-full lg:mt-20 flex items-center justify-center flex-col">
-                <div className="w-full h-[380px] lg:h-[720px] overflow-hidden rounded-t-full">
-                  <img
-                    className="w-full h-full object-cover"
-                    src="/image.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="mt-2 flex flex-col items-center justify-between">
-                  <h3 className="text-xl">BLEU DE CHANEL</h3>
-                  <p className="text-xl">1 000 000 USZ</p>
-                </div>
-              </div>
-            </div>
-            <div className="w-full lg:w-[30%] flex lg:flex-col gap-5">
-              <div className="w-full h-full lg:mt-10">
-                <div className="w-full h-[180px] lg:h-[500px] overflow-hidden rounded-t-full">
-                  <img
-                    className="w-full h-full object-cover"
-                    src="/image.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="mt-2 flex flex-col items-center justify-between">
-                  <h3 className="text-[14px] lg:text-xl">CHANEL</h3>
-                  <p className="text-[14px] lg:text-xl">1 000 000 USZ</p>
-                </div>
-              </div>
-              <div className="w-full h-full lg:mt-10">
-                <div className="w-full h-[180px] lg:h-[500px] overflow-hidden rounded-t-full">
-                  <img
-                    className="w-full h-full object-cover"
-                    src="/image.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="mt-2 flex flex-col items-center justify-between">
-                  <h3 className="text-[14px] lg:text-xl">CHANEL</h3>
-                  <p className="text-[14px] lg:text-xl">1 000 000 USZ</p>
-                </div>
-              </div>
-            </div>
-          </div> */}
+          {/* <h1 className="text-4xl lg:text-6xl font-bold">TREND</h1> */}
  
           <div className="grid grid-cols-3 lg:grid-cols-4 gap-5 lg:gap-10">
           {images.map((src, index) => {
@@ -500,32 +428,31 @@ export default function Home() {
           // 👇 Kichik ekranlar uchun (grid-cols-3):
           if (isMobile) {
             const col = index % 3;
-            if (col === 0) translateClass = "translate-y-1/4";
-            else if (col === 1) translateClass = "-translate-y-1/4";
-            else translateClass = "translate-y-1/6";
+            if (col === 0) translateClass = "-translate-y-1/4";
+            else if (col === 1) translateClass = "translate-y-1/4";
+            else translateClass = "-translate-y-1/6";
           }
 
           // 👇 Katta ekranlar uchun (grid-cols-4):
           else {
             const col = index % 4;
-            if (col === 0) translateClass = "translate-y-1/4";
-            else if (col === 1) translateClass = "-translate-y-1/4";
-            else if (col === 2) translateClass = "translate-y-1/4";
-            else translateClass = "-translate-y-1/4";
+            if (col === 0) translateClass = "-translate-y-1/4";
+            else if (col === 1) translateClass = "translate-y-1/4";
+            else if (col === 2) translateClass = "-translate-y-1/4";
+            else translateClass = "translate-y-1/4";
           }
 
           return (
             <div
               key={index}
-              className={`bg-white rounded-full overflow-hidden flex items-center justify-center shadow-lg transition-transform ${translateClass}`}
+              className={`bg-white rounded-full overflow-hidden flex items-center justify-center shadow-lg ${translateClass}`}
             >
               <img src={src} alt="perfume" className="w-full h-full object-cover" />
             </div>
           );
         })}
-      </div>
           </div>
-        
+        </div>
       </section>
 
       <section>
