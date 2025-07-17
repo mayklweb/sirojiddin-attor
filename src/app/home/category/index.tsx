@@ -1,13 +1,12 @@
-"use client"
-import gsap from 'gsap';
-import { useEffect } from 'react'
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+"use client";
+import gsap from "gsap";
+import { useEffect } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 function Categories() {
-
   useEffect(() => {
-    const categories = gsap.utils.toArray < HTMLElement > (".category");
+    const categories = gsap.utils.toArray<HTMLElement>(".category");
 
     categories.forEach((category, index) => {
       gsap.from(category, {
@@ -23,7 +22,6 @@ function Categories() {
         },
       });
     });
-
   }, []);
 
   return (
@@ -86,7 +84,7 @@ function Categories() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Categories
+export default Categories;

@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useEffect, useRef } from 'react'
-import gsap from 'gsap';
-import Image from 'next/image';
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import Image from "next/image";
 
 const logos = [
   {
@@ -40,62 +40,57 @@ const logos = [
 ];
 
 function Brands() {
+  const containerRef = useRef<HTMLDivElement>(null);
 
-    const containerRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const items = gsap.utils.toArray<HTMLElement>(".logo-item");
+      const itemWidth = items[0]?.offsetWidth || 200;
+      const totalWidth = itemWidth * items.length;
 
-    useEffect(() => {
+      // Set initial position
+      gsap.set(items, {
+        x: (_, i) => i * itemWidth,
+      });
 
-      const ctx = gsap.context(() => {
-        const items = gsap.utils.toArray<HTMLElement>(".logo-item");
-        const itemWidth = items[0]?.offsetWidth || 200;
-        const totalWidth = itemWidth * items.length;
-  
-        // Set initial position
-        gsap.set(items, {
-          x: (_, i) => i * itemWidth,
-        });
-  
-        // Infinite loop animation
-        gsap.to(items, {
-          x: `-=${itemWidth * logos.length}`,
-          duration: 20, // slower = smoother
-          ease: "linear",
-          repeat: -1,
-          modifiers: {
-            x: (x) => `${parseFloat(x) % totalWidth}px`,
-          },
-        });
-  
-  
-      }, [containerRef]);
+      // Infinite loop animation
+      gsap.to(items, {
+        x: `-=${itemWidth * logos.length}`,
+        duration: 20, // slower = smoother
+        ease: "linear",
+        repeat: -1,
+        modifiers: {
+          x: (x) => `${parseFloat(x) % totalWidth}px`,
+        },
+      });
+    }, [containerRef]);
 
     return () => ctx.revert();
+  }, []);
 
-    }, [])
-  
   return (
     <section>
-    <div className="overflow-hidden w-full py-10 bg-white border-y-[1px] border-[#E6D8AD]">
-      <div ref={containerRef} className="flex w-max gap-10 ">
-        {/* ✅ Duplicate logos to loop */}
-        {[...logos, ...logos].map((logo, idx) => (
-          <div
-            key={idx}
-            className="logo-item w-[200px] h-[80px] shrink-0 flex items-center justify-center"
-          >
-            <Image
-              src={logo.logo}
-              alt={`Brand ${idx}`}
-              width={200}
-              height={80}
-              className="object-contain"
-            />
-          </div>
-        ))}
+      <div className="overflow-hidden w-full py-10 bg-white border-y-[1px] border-[#E6D8AD]">
+        <div ref={containerRef} className="flex w-max gap-10 ">
+          {/* ✅ Duplicate logos to loop */}
+          {[...logos, ...logos].map((logo, idx) => (
+            <div
+              key={idx}
+              className="logo-item w-[200px] h-[80px] shrink-0 flex items-center justify-center"
+            >
+              <Image
+                src={logo.logo}
+                alt={`Brand ${idx}`}
+                width={200}
+                height={80}
+                className="object-contain"
+              />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-  )
+    </section>
+  );
 }
 
-export default Brands
+export default Brands;
