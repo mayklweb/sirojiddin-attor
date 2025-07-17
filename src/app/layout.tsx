@@ -31,46 +31,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // const menu = useRef(null);
 
-  // const closeOpen = () => {
-  //   if (openModal) {
-  //     setOpenModal(false);
-  //   } else {
-  //     setOpenModal(true);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   const isMobile = window.innerWidth < 1024;
-
-  // gsap.set(menu.current, {
-  //   opacity: 0,
-  //   y: 20,
-  // });
-
-  //   ScrollTrigger.create({
-  //     start: 0,
-  //     end: "max",
-  //     onUpdate: (self) => {
-  //       if (self.direction === 1) {
-  //         scrollAnim.play(); // scroll down
-  //       } else {
-  //         scrollAnim.reverse(); // scroll up
-  //       }
-  //     },
-  //   });
-
-  //   return () => {
-  //     ScrollTrigger.killAll();
-  //   };
-  // }, []);
 
   return (
     <html lang="en">
       <body
         className={`${gayathri.variable} ${aboreto.variable} ${cormorantGaramond.variable} antialiased`}
       >
+        <div className="wrapper">
         <header className=" w-full bg-transparent fixed top-0 left-0 z-10 border-b-[1px] border-solid border-[#030303] before:absolute before:w-full before:h-full before:backdrop-blur-3xl">
           <div className="container">
             <div className="py-6 lg:py-10 flex bg-transparent items-center justify-between relative ">
@@ -112,8 +80,9 @@ export default function RootLayout({
             </div>
           </div>
         </header>
-        <main className="flex flex-col">{children}</main>
+        <main className="flex flex-col main">{children}</main>
         <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"></footer>
+       </div>
       </body>
     </html>
   );

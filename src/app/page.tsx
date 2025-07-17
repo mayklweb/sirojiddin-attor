@@ -2,14 +2,12 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { Banner, Brands, Categories, Info, Products } from "./home";
-
-
-gsap.registerPlugin(ScrollTrigger);
+import ScrollSmoother from "gsap/ScrollSmoother";
 
 export default function Home() {
 
   return (
-    <>
+    <div className="main">
     <Banner/>
     <Brands/>
     <Categories/>
@@ -135,6 +133,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
