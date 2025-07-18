@@ -4,12 +4,10 @@ import { useEffect, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.registerPlugin(ScrollTrigger);
-
 function Products() {
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
-  const images = Array(8).fill("/parfume.png");
+  const images = Array(9).fill("/parfume.png");
 
   useEffect(() => {
     const parfumes = gsap.utils.toArray<HTMLElement>(".parfume");
@@ -20,7 +18,7 @@ function Products() {
         opacity: 0,
         duration: 1.6,
         ease: "power3.out",
-        delay: index * 0.1,
+        delay: index * 0.2,
         scrollTrigger: {
           trigger: parfume,
           start: "top bottom",
@@ -48,29 +46,27 @@ function Products() {
       <div className="container">
         <div className="grid grid-cols-3 lg:grid-cols-4 gap-5 lg:gap-10">
           {images.map((src, index) => {
+            const col = isMobile ? index % 3 : index % 4;
+
             let translateClass = "";
 
             if (isMobile) {
-              const col = index % 3;
+              // 3 columns on mobile
               if (col === 0) translateClass = "-translate-y-1/4";
-              else if (col === 1)
-                translateClass = "translate-y-1/4";
-              else translateClass = "-translate-y-1/6";
-            } 
-            else {
-              const col = index % 4;
-              if (col === 0) translateClass = "-translate-y-1/4";
-              else if (col === 1)
-                translateClass = "translate-y-1/4";
-              else if (col === 2)
-                translateClass = "-translate-y-1/4";
-              else translateClass = "translate-y-1/4";
+              else if (col === 1) translateClass = "translate-y-1/4";
+              else translateClass = "-translate-y-1/4";
+            } else {
+              // 4 columns on desktop
+              if (col === 0) translateClass = "translate-y-1/4";
+              else if (col === 1) translateClass = "-translate-y-1/4";
+              else if (col === 2) translateClass = "translate-y-1/4";
+              else translateClass = "-translate-y-1/4";
             }
 
             return (
               <div
                 key={index}
-                className={`bg-white rounded-full overflow-hidden flex items-center justify-center shadow-lg ${translateClass} parfume`}
+                className={`bg-white rounded-full overflow-hidden flex items-center justify-center shadow-lg transform ${translateClass} parfume`}
               >
                 <img
                   src={src}
