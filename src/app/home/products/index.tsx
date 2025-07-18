@@ -1,22 +1,24 @@
 "use client";
 import gsap from "gsap";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 function Products() {
   const [isMobile, setIsMobile] = useState(false);
-  const [images, setImages] = useState<string[]>([]);
+  // const [images, setImages] = useState<string[]>([]);
+
+  const images = Array(8).fill("/parfume.png");
 
 
   useEffect(() => {
     const parfumes = gsap.utils.toArray<HTMLElement>(".parfume");
 
-    if (isMobile){
-      setImages(Array(9).fill("/parfume.png"));
-    } else {
-      setImages(Array(8).fill("/parfume.png"));
-    }
+    // if (isMobile){
+    //   setImages(Array(9).fill("/parfume.png"));
+    // } else {
+    //   setImages(Array(8).fill("/parfume.png"));
+    // }
 
     parfumes.forEach((parfume, index) => {
       gsap.from(parfume, {
