@@ -12,7 +12,7 @@ export default function Product() {
               height={600}
               // className="object-cover"
               className="w-full h-full "
-              src="/image.jpg"
+              src="/parfume.png"
               alt="Product Image"
             />
           </div>

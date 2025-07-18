@@ -14,7 +14,7 @@ function Info() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "60% bottom",
+        start: "center bottom",
         end: "+=800",
         scrub: true,
         pin: true,
@@ -52,11 +52,11 @@ function Info() {
           <div className="flex items-center justify-center">
             <div
               ref={infoImgRef}
-              className="w-9/10 lg:w-[325px] h-[240px] lg:h-[480px] overflow-hidden rounded-full "
+              className="w-9/10 lg:w-[325px] h-[360px] lg:h-[480px] overflow-hidden rounded-full "
             >
               <img
                 className="w-full h-full object-cover"
-                src="/image.jpg"
+                src="/parfume.png"
                 alt=""
               />
             </div>

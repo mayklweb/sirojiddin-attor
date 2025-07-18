@@ -5,15 +5,18 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 function Products() {
-  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [images, setImages] = useState<string[]>([]);
 
-
-  const images = useMemo(() => {
-    return isMobile ? Array(9).fill("/parfume.png") : Array(8).fill("/parfume.png");
-  }, [isMobile]);
 
   useEffect(() => {
     const parfumes = gsap.utils.toArray<HTMLElement>(".parfume");
+
+    if (isMobile){
+      setImages(Array(9).fill("/parfume.png"));
+    } else {
+      setImages(Array(8).fill("/parfume.png"));
+    }
 
     parfumes.forEach((parfume, index) => {
       gsap.from(parfume, {
@@ -29,56 +32,51 @@ function Products() {
         },
       });
     });
-  }, [images]);
+  }, []); 
+
+
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 768); // lg = 1024px
     };
 
     handleResize();
     window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, [isMobile]);
 
   return (
     <section className="w-full">
-    <div className="container">
+      <div className="container">
+        <div className="grid grid-cols-3 lg:grid-cols-4 gap-5 lg:gap-10">
+          {images.map((src, index) => {
+            const col = isMobile ? index % 3 : index % 4;
+            let translateClass = "";
 
-      <div className="grid grid-cols-3 lg:grid-cols-4 gap-5 lg:gap-10">
-      {images.map((src, index) => {
-      let translateClass = "";
+            if (isMobile) {
+              if (col === 0) translateClass = "-translate-y-1/4";
+              else if (col === 1) translateClass = "translate-y-1/4";
+              else translateClass = "-translate-y-1/4";
+            } else {
+              if (col === 0) translateClass = "-translate-y-1/4";
+              else if (col === 1) translateClass = "translate-y-1/4";
+              else if (col === 2) translateClass = "-translate-y-1/4";
+              else translateClass = "translate-y-1/4";
+            }
 
-      if (isMobile) {
-        const col = index % 3;
-        if (col === 0) translateClass = "-translate-y-1/4";
-        else if (col === 1) translateClass = "translate-y-1/4";
-        else translateClass = "-translate-y-1/6";
-      }
-
-      else {
-        const col = index % 4;
-        if (col === 0) translateClass = "-translate-y-1/4";
-        else if (col === 1) translateClass = "translate-y-1/4";
-        else if (col === 2) translateClass = "-translate-y-1/4";
-        else translateClass = "translate-y-1/4";
-      }
-
-      return (
-        <div
-          key={index}
-          className={`bg-white rounded-full overflow-hidden flex items-center justify-center shadow-lg ${translateClass}`}
-        >
-          <img src={src} alt="perfume" className="w-full h-full object-cover" />
+            return (
+              <div
+                key={index}
+                className={`parfume bg-white rounded-full overflow-hidden flex items-center justify-center shadow-lg transform ${translateClass}`}
+              >
+                <img src={src} alt="perfume" className="w-full h-full object-cover" />
+              </div>
+            );
+          })}
         </div>
-      );
-    })}
       </div>
-    </div>
-  </section>
+    </section>
   );
 }
 
