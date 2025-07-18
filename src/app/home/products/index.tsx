@@ -43,42 +43,39 @@ function Products() {
 
   return (
     <section className="w-full">
-      <div className="container">
-        <div className="grid grid-cols-3 lg:grid-cols-4 gap-5 lg:gap-10">
-          {images.map((src, index) => {
-            const col = isMobile ? index % 3 : index % 4;
+    <div className="container">
 
-            let translateClass = "";
+      <div className="grid grid-cols-3 lg:grid-cols-4 gap-5 lg:gap-10">
+      {images.map((src, index) => {
+      let translateClass = "";
 
-            if (isMobile) {
-              // 3 columns on mobile
-              if (col === 0) translateClass = "-translate-y-1/4";
-              else if (col === 1) translateClass = "translate-y-1/4";
-              else translateClass = "-translate-y-1/4";
-            } else {
-              // 4 columns on desktop
-              if (col === 0) translateClass = "translate-y-1/4";
-              else if (col === 1) translateClass = "-translate-y-1/4";
-              else if (col === 2) translateClass = "translate-y-1/4";
-              else translateClass = "-translate-y-1/4";
-            }
+      if (isMobile) {
+        const col = index % 3;
+        if (col === 0) translateClass = "-translate-y-1/4";
+        else if (col === 1) translateClass = "translate-y-1/4";
+        else translateClass = "-translate-y-1/6";
+      }
 
-            return (
-              <div
-                key={index}
-                className={`bg-white rounded-full overflow-hidden flex items-center justify-center shadow-lg transform ${translateClass} parfume`}
-              >
-                <img
-                  src={src}
-                  alt="perfume"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            );
-          })}
+      else {
+        const col = index % 4;
+        if (col === 0) translateClass = "-translate-y-1/4";
+        else if (col === 1) translateClass = "translate-y-1/4";
+        else if (col === 2) translateClass = "-translate-y-1/4";
+        else translateClass = "translate-y-1/4";
+      }
+
+      return (
+        <div
+          key={index}
+          className={`bg-white rounded-full overflow-hidden flex items-center justify-center shadow-lg ${translateClass}`}
+        >
+          <img src={src} alt="perfume" className="w-full h-full object-cover" />
         </div>
+      );
+    })}
       </div>
-    </section>
+    </div>
+  </section>
   );
 }
 
