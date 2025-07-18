@@ -52,7 +52,7 @@ function Info() {
           <div>
             <div
               ref={infoImgRef}
-              className="w-full lg:w-[325px] h-[380px] lg:h-[480px] overflow-hidden rounded-full "
+              className="w-full lg:w-[325px] h-[280px] lg:h-[480px] overflow-hidden rounded-full "
             >
               <img
                 className="w-full h-full object-cover"
