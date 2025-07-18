@@ -28,9 +28,9 @@ function Categories() {
     <section className="w-full mt-10">
       <div className="container">
         <h1 className="text-4xl lg:text-6xl font-bold">MENS</h1>
-        <div className="mt-5 lg:mt-10 w-full grid grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="mt-5 lg:mt-10 w-full grid grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-5">
           <div className="w-full h-full category">
-            <div className="w-full h-[180px] lg:h-[440px] overflow-hidden rounded-full">
+            <div className="w-full h-[240px] lg:h-[440px] overflow-hidden rounded-full">
               <img
                 className="w-full h-full object-cover"
                 src="/parfume.png"
@@ -43,7 +43,7 @@ function Categories() {
             </div>
           </div>
           <div className="w-full h-full mt-5 lg:mt-10 category">
-            <div className="w-full h-[180px] lg:h-[440px] overflow-hidden rounded-full">
+            <div className="w-full h-[240px] lg:h-[440px] overflow-hidden rounded-full">
               <img
                 className="w-full h-full object-cover"
                 src="/parfume.png"
@@ -56,7 +56,7 @@ function Categories() {
             </div>
           </div>
           <div className="w-full h-full category">
-            <div className="w-full h-[180px] lg:h-[440px] overflow-hidden rounded-full">
+            <div className="w-full h-[240px] lg:h-[440px] overflow-hidden rounded-full">
               <img
                 className="w-full h-full object-cover"
                 src="/parfume.png"
@@ -69,7 +69,7 @@ function Categories() {
             </div>
           </div>
           <div className="w-full h-full mt-5 lg:mt-10 category">
-            <div className="w-full h-[180px] lg:h-[440px] overflow-hidden rounded-full">
+            <div className="w-full h-[240px] lg:h-[440px] overflow-hidden rounded-full">
               <img
                 className="w-full h-full object-cover"
                 src="/parfume.png"

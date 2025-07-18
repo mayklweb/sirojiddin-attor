@@ -1,8 +1,5 @@
 "use client";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import { Banner, Brands, Categories, Info, Products } from "./home";
-import ScrollSmoother from "gsap/ScrollSmoother";
 
 export default function Home() {
 

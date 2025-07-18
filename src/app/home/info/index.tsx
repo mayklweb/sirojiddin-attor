@@ -15,10 +15,11 @@ function Info() {
       scrollTrigger: {
         trigger: sectionRef.current,
         start: "60% bottom",
-        end: "+=600",
+        end: "+=800",
         scrub: true,
         pin: true,
       },
+      smoothChildTiming: true,
     });
 
     tl.to(infoTextRef.current, { zIndex: 2, duration: 1 });

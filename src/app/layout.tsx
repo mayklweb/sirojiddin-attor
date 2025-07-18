@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Aboreto, Gayathri, Cormorant_Garamond } from "next/font/google";
+import {
+  Aboreto,
+  Gayathri,
+  Cormorant_Garamond,
+  Albert_Sans,
+} from "next/font/google";
 import "./globals.css";
 import { Instagram, Search, ShoppingBag } from "lucide-react";
 
@@ -11,6 +16,12 @@ const gayathri = Gayathri({
 
 const aboreto = Aboreto({
   variable: "--font-aboreto",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
+const albertSans = Albert_Sans({
+  variable: "--font-albert-sans",
   subsets: ["latin"],
   weight: ["400"],
 });
@@ -31,58 +42,59 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
-
   return (
     <html lang="en">
       <body
-        className={`${gayathri.variable} ${aboreto.variable} ${cormorantGaramond.variable} antialiased`}
+        className={`${gayathri.variable} ${aboreto.variable} ${cormorantGaramond.variable} ${albertSans.variable} antialiased`}
       >
         <div className="wrapper">
-        <header className=" w-full bg-transparent fixed top-0 left-0 z-10 border-b-[1px] border-solid border-[#030303] before:absolute before:w-full before:h-full before:backdrop-blur-3xl">
-          <div className="container">
-            <div className="py-6 lg:py-10 flex bg-transparent items-center justify-between relative ">
-              <button
-                className=" relative w-8 h-2 focus:outline-none cursor-pointer"
-                aria-label="Toggle menu"
-              >
-                <div className="relative w-full h-full flex justify-center items-center ">
-                  <span
-                    className={`w-12 h-0.5 bg-[#030303] absolute transition-all duration-500 ease-in-out gap-2`}
-                  ></span>
+          <header className=" w-full bg-transparent fixed top-0 left-0 z-10 border-b-[1px] border-solid border-[#030303] before:absolute before:w-full before:h-full before:backdrop-blur-3xl">
+            <div className="container">
+              <div className="py-6 lg:py-10 flex bg-transparent items-center justify-between relative ">
+                <button className="flex items-center gap-3 cursor-pointer">
+                  <div
+                    className=" relative w-12 h-2 focus:outline-none "
+                    aria-label="Toggle menu"
+                  >
+                    <div className="relative w-12 h-full flex justify-center items-center ">
+                      <span
+                        className={`w-12 h-0.5 bg-[#030303] absolute transition-all duration-500 ease-in-out gap-2`}
+                      ></span>
 
-                  <span
-                    className={`w-12 h-0.5 -mt-3 bg-[#030303] absolute transition-all duration-500 ease-in-out gap-2`}
-                  ></span>
+                      <span
+                        className={`w-12 h-0.5 -mt-3 bg-[#030303] absolute transition-all duration-500 ease-in-out gap-2`}
+                      ></span>
+                    </div>
+                  </div>
+                  <span className="text-xl mb-2">MENU</span>
+                </button>
+
+                <div className="flex flex-col items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <h1 className="font-aboreto text-lg lg:text-2xl text-[#]">
+                    SUROJIDDIN
+                  </h1>
+                  <p className="font-aboreto text-lg lg:text-2xl text-[#030303]">
+                    ATTOR
+                  </p>
                 </div>
-              </button>
 
-              <div className="flex flex-col items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                <h1 className="font-aboreto text-lg lg:text-2xl text-[#]">
-                  SUROJIDDIN
-                </h1>
-                <p className="font-aboreto text-lg lg:text-2xl text-[#030303]">
-                  ATTOR
-                </p>
-              </div>
-
-              <div className="lg:flex gap-4">
-                <button className="cursor-pointer">
-                  <Search width={26} height={26} strokeWidth={1.5} />
-                </button>
-                <button className="cursor-pointer">
-                  <ShoppingBag width={26} height={26} strokeWidth={1.5} />
-                </button>
-                <button className="cursor-pointer">
-                  <Instagram width={26} height={26} strokeWidth={1.5} />
-                </button>
+                <div className="lg:flex gap-4">
+                  <button className="cursor-pointer">
+                    <Search width={26} height={26} strokeWidth={1.5} />
+                  </button>
+                  <button className="cursor-pointer">
+                    <ShoppingBag width={26} height={26} strokeWidth={1.5} />
+                  </button>
+                  <button className="cursor-pointer">
+                    <Instagram width={26} height={26} strokeWidth={1.5} />
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        </header>
-        <main className="flex flex-col main">{children}</main>
-        <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"></footer>
-       </div>
+          </header>
+          <main className="flex flex-col main">{children}</main>
+          <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"></footer>
+        </div>
       </body>
     </html>
   );

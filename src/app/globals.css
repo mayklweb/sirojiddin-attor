@@ -11,6 +11,7 @@
   --font-aboreto: var(--font-aboreto);
   --font-gayathri: var(--font-gayathri);
   --font-cormorant-garamond: var(--font-cormorant-garamond);
+  --font-albert-sans: var(--font-albert-sans);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,7 +29,7 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-gayathri);
+  font-family: var(--font-albert-sans);
 }
 
 .container {
