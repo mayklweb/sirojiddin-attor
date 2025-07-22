@@ -19,7 +19,7 @@ function Products() {
         opacity: 0,
         duration: 1.6,
         ease: "power3.out",
-        delay: index * 0.2,
+        delay: index * 0.1,
         scrollTrigger: {
           trigger: parfume,
           start: "top bottom",

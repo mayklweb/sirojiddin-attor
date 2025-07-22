@@ -1,6 +1,7 @@
 function ProductsMobile() {
-  
+
   const images = Array(9).fill("/parfume.png");
+  
 
   return (
     <div className="grid lg:hidden grid-cols-3 gap-5">
