@@ -37,9 +37,9 @@ function Info() {
       <div className="container">
         <div
           ref={sectionRef}
-          className="mt-5 lg:mt-20 w-full h-full flex flex-col items-center gap-24 mix-blend-difference"
+          className="mt-5 lg:mt-20 w-full h-full flex flex-col items-center gap-24 bg-[#fdfdfd]"
         >
-          <div className="w-full lg:w-[100%] flex lg:flex-col gap-5 items-center">
+          <div className="w-full lg:w-[100%] flex lg:flex-col gap-5 items-center relative z-50 mix-blend-difference">
             <h1
               ref={infoTextRef}
               className="w-full lg:w-[1120px] text-white text-4xl lg:text-8xl font-cormorant-garamond text-center italic tracking-tighter"
