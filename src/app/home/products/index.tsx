@@ -2,23 +2,16 @@
 import gsap from "gsap";
 import { useEffect, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ProductsDesktop from "./components/ProductsDesktop";
+import ProductsMobile from "./components/ProductsMobile";
 gsap.registerPlugin(ScrollTrigger);
 
 function Products() {
   const [isMobile, setIsMobile] = useState(false);
-  // const [images, setImages] = useState<string[]>([]);
-
-  const images = Array(8).fill("/parfume.png");
 
 
   useEffect(() => {
     const parfumes = gsap.utils.toArray<HTMLElement>(".parfume");
-
-    // if (isMobile){
-    //   setImages(Array(9).fill("/parfume.png"));
-    // } else {
-    //   setImages(Array(8).fill("/parfume.png"));
-    // }
 
     parfumes.forEach((parfume, index) => {
       gsap.from(parfume, {
@@ -34,13 +27,11 @@ function Products() {
         },
       });
     });
-  }, []); 
-
-
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); // lg = 1024px
+      setIsMobile(window.innerWidth < 768);
     };
 
     handleResize();
@@ -51,32 +42,8 @@ function Products() {
   return (
     <section className="w-full">
       <div className="container">
-        <div className="grid grid-cols-3 lg:grid-cols-4 gap-5 lg:gap-10">
-          {images.map((src, index) => {
-            const col = isMobile ? index % 3 : index % 4;
-            let translateClass = "";
-
-            if (isMobile) {
-              if (col === 0) translateClass = "-translate-y-1/4";
-              else if (col === 1) translateClass = "translate-y-1/4";
-              else translateClass = "-translate-y-1/4";
-            } else {
-              if (col === 0) translateClass = "-translate-y-1/4";
-              else if (col === 1) translateClass = "translate-y-1/4";
-              else if (col === 2) translateClass = "-translate-y-1/4";
-              else translateClass = "translate-y-1/4";
-            }
-
-            return (
-              <div
-                key={index}
-                className={`parfume bg-white rounded-full overflow-hidden flex items-center justify-center shadow-lg transform ${translateClass}`}
-              >
-                <img src={src} alt="perfume" className="w-full h-full object-cover" />
-              </div>
-            );
-          })}
-        </div>
+        <ProductsDesktop />
+        <ProductsMobile />
       </div>
     </section>
   );
