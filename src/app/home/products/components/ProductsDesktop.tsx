@@ -1,15 +1,15 @@
 function ProductsDesktop() {
 
-  const images = Array(8).fill("/parfume.png");
+  const images = Array(9).fill("/parfume.png");
 
   return (
-    <div className="hidden lg:grid grid-cols-4 gap-10">
+    <div className="hidden lg:grid grid-cols-3 gap-10">
       {images.map((src, index) => {
-        const columnCount = 4; 
+        const columnCount = 3; 
         const col = index % columnCount;
         let translateClass = "";
 
-        if (columnCount === 4) {
+        if (columnCount === 3) {
           if (col === 0) translateClass = "-translate-y-1/6";
           else if (col === 1) translateClass = "translate-y-1/6";
           else if (col === 2) translateClass = "-translate-y-1/6";

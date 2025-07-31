@@ -1,5 +1,5 @@
 "use client";
-import { Banner, Brands, Categories, Info, Products } from "./home";
+import { About, Address, Banner, Brands, Categories, Info, Products } from "./home";
 
 export default function Home() {
 
@@ -10,6 +10,8 @@ export default function Home() {
     <Categories/>
     <Info/>
     <Products/>
+    <About/>
+    <Address/>
 
       {/* <section className="w-full mt-10 hidden">
         <div className="container">
@@ -121,15 +123,7 @@ export default function Home() {
       </section> */}
 
 
-      <section>
-        <div className="container mt-10">
-          <div>
 
-          <h1 className="text-[#DAC289] text-center text-6xl font-bold lg:text-6xl font-cormorant-garamond"><span className="italic">ABOUT  </span>  <span>  US</span></h1>
-          <div></div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

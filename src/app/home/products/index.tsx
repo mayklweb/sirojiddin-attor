@@ -42,8 +42,10 @@ function Products() {
   return (
     <section className="w-full">
       <div className="container">
-        <ProductsDesktop />
-        <ProductsMobile />
+        <div className="mb-20">
+          <ProductsDesktop />
+          <ProductsMobile />
+        </div>
       </div>
     </section>
   );

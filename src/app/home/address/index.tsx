@@ -39,26 +39,23 @@ function Address() {
     document.body.appendChild(script);
   }, []);
 
-
-  interface Coordinates {
-    lat: number;
-    lng: number;
-  }
-
-  const changeLocation = (coords: [number, number]) => {
-    if (mapRef.current && placemarkRef.current) {
-      mapRef.current.setCenter(coords, 16);
-      placemarkRef.current.geometry.setCoordinates(coords);
-    }
-  };
-
   return (
-    <div>
-      <div
-        id="map"
-        className="w-full h-[340px] mt-5 absolute"
-      ></div>
-    </div>
+    <section>
+      <div className='my-10'>
+
+        {/* <div
+          id="map"
+          className="w-full h-[340px] mt-5"
+        ></div> */}
+        <div className="w-full h-[400px] relative">
+          <div
+            id="map"
+            className="w-full h-full mt-5 absolute"
+          ></div>
+          <div className="w-full h-full mt-5 pointer-events-none shadow-[inset_0px_0px_20px_40px_#fdfdfd]  absolute"></div>
+        </div>
+      </div>
+    </section>
   )
 }
 
