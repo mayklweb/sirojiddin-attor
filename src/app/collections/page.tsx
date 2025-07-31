@@ -24,7 +24,7 @@ const ProductCard = ({
   img: string;
 }) => (
   <div className="w-full">
-    <div className="w-full h-[70%] overflow-hidden rounded-t-[100%]">
+    <div className="w-full h-[70%] overflow-hidden rounded-t-full">
       <Image
         width={300}
         height={400}
@@ -40,9 +40,9 @@ const ProductCard = ({
   </div>
 );
 
-export default function Category() {
+export default function Collections() {
   return (
-    <div className="w-full mt-[96px]">
+    <div className="w-full mt-32">
       <div className="container">
         <div className="w-full flex">
           <div className="w-2/10 p-4 hidden lg:block">
