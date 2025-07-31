@@ -6,7 +6,8 @@ import {
   Albert_Sans,
 } from "next/font/google";
 import "./globals.css";
-import { Instagram, Link, Search, ShoppingBag } from "lucide-react";
+import { Instagram, Search, ShoppingBag } from "lucide-react";
+import Link from "next/link";
 
 const gayathri = Gayathri({
   variable: "--font-gayathri",
@@ -105,13 +106,23 @@ export default function RootLayout({
                   </p>
                 </div>
 
-                <div>
-                 
+                <div className="flex gap-6">
+                  <div>
+                    <p>Winter</p>
+                    <p>Winter</p>
+                    <p>Winter</p>
+                  </div>
+                  <div>
+                    <p>Winter</p>
+                    <p>Winter</p>
+                    <p>Winter</p>
+                  </div>
                 </div>
 
-                <div className="flex gap-4">
-                  <Link to={'https://instagram.com'} >Instagram</Link>
-                  <Link to={'https://telegram.com'} >Telegram</Link>
+                <div className="flex flex-col gap-4">
+                  <Link href={'https://www.instagram.com/sirojiddin_attor/'} >Instagram</Link>
+                  <Link href={'https://telegram.com'} >Telegram</Link>
+                  <p>+998 99 999 99 99</p>
                 </div>
               </div>
             </div>

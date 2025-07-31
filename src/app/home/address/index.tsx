@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react'
 
-// Extend the Window interface to include ymaps
 declare global {
   interface Window {
     ymaps: any;
@@ -42,11 +41,6 @@ function Address() {
   return (
     <section>
       <div className='my-10'>
-
-        {/* <div
-          id="map"
-          className="w-full h-[340px] mt-5"
-        ></div> */}
         <div className="w-full h-[400px] relative">
           <div
             id="map"
