@@ -1,15 +1,20 @@
 import React, { useEffect, useRef } from 'react'
+import ymaps from 'yandex-maps';
 
+// Yandex Maps Type deklaratsiyasi
 declare global {
   interface Window {
-    ymaps: any;
+    ymaps: typeof ymaps;
   }
 }
 
-function Address() {
+// map va placemark uchun to'g'ri type
+type YMap = any;        // yoki to'liq type import qilsangiz yaxshi
+type YPlacemark = any;  // yoki to'liq type import qilsangiz yaxshi
 
-  const mapRef = useRef<null>(null);
-  const placemarkRef = useRef<null>(null);
+function Address() {
+  const mapRef = useRef<YMap | null>(null);
+  const placemarkRef = useRef<YPlacemark | null>(null);
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -53,4 +58,4 @@ function Address() {
   )
 }
 
-export default Address
+export default Address;
