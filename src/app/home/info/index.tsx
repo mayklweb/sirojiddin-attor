@@ -49,21 +49,6 @@ function Info() {
               oxirgi eslatma.
             </h1>
           </div>
-
-          <div className="flex items-center justify-center">
-            <div
-              ref={infoImgRef}
-              className="w-9/10 lg:w-[325px] h-[360px] lg:h-[480px] overflow-hidden rounded-full "
-            >
-              <Image
-                width={300}
-                height={400}
-                className="w-full h-full object-cover"
-                src="/parfume.png"
-                alt=""
-              />
-            </div>
-          </div>
         </div>
       </div>
     </section>
