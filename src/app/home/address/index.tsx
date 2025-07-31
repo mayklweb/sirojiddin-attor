@@ -8,8 +8,8 @@ declare global {
 
 function Address() {
 
-  const mapRef = useRef<null | any>(null);
-  const placemarkRef = useRef<null | any>(null);
+  const mapRef = useRef<null>(null);
+  const placemarkRef = useRef<null>(null);
 
   useEffect(() => {
     const script = document.createElement("script");
