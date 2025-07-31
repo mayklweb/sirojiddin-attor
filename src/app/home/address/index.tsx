@@ -8,13 +8,11 @@ declare global {
   }
 }
 
-// map va placemark uchun to'g'ri type
-type YMap = any;        // yoki to'liq type import qilsangiz yaxshi
-type YPlacemark = any;  // yoki to'liq type import qilsangiz yaxshi
 
 function Address() {
-  const mapRef = useRef<YMap | null>(null);
-  const placemarkRef = useRef<YPlacemark | null>(null);
+  const mapRef = useRef<object | null>(null);
+  const placemarkRef = useRef<object | null>(null);
+  
 
   useEffect(() => {
     const script = document.createElement("script");
