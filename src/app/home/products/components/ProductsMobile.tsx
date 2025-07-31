@@ -1,7 +1,9 @@
+import Image from "next/image";
+
 function ProductsMobile() {
 
   const images = Array(9).fill("/parfume.png");
-  
+
 
   return (
     <div className="grid lg:hidden grid-cols-3 gap-5">
@@ -22,7 +24,7 @@ function ProductsMobile() {
             key={index}
             className={`parfume bg-white rounded-full overflow-hidden flex items-center justify-center shadow-lg transform ${translateClass}`}
           >
-            <img src={src} alt="perfume" className="w-full h-full object-cover" />
+            <Image src={src} alt="perfume" className="w-full h-full object-cover" />
           </div>
         );
       })}

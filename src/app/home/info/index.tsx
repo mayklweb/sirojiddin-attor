@@ -3,6 +3,7 @@
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 
 function Info() {
@@ -54,7 +55,9 @@ function Info() {
               ref={infoImgRef}
               className="w-9/10 lg:w-[325px] h-[360px] lg:h-[480px] overflow-hidden rounded-full "
             >
-              <img
+              <Image
+                width={300}
+                height={400}
                 className="w-full h-full object-cover"
                 src="/parfume.png"
                 alt=""

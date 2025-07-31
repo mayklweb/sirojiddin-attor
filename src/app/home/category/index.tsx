@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+import Image from "next/image";
 
 function Categories() {
   useEffect(() => {
@@ -31,7 +32,9 @@ function Categories() {
         <div className="mt-5 lg:mt-10 w-full grid grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-5">
           <div className="w-full h-full category">
             <div className="w-full h-[240px] lg:h-[440px] overflow-hidden rounded-full">
-              <img
+              <Image
+                width={300}
+                height={400}
                 className="w-full h-full object-cover"
                 src="/parfume.png"
                 alt=""
@@ -44,7 +47,9 @@ function Categories() {
           </div>
           <div className="w-full h-full mt-5 lg:mt-10 category">
             <div className="w-full h-[240px] lg:h-[440px] overflow-hidden rounded-full">
-              <img
+              <Image
+                width={300} 
+                height={400}
                 className="w-full h-full object-cover"
                 src="/parfume.png"
                 alt=""
@@ -57,7 +62,9 @@ function Categories() {
           </div>
           <div className="w-full h-full category">
             <div className="w-full h-[240px] lg:h-[440px] overflow-hidden rounded-full">
-              <img
+              <Image  
+                width={300}
+                height={400}
                 className="w-full h-full object-cover"
                 src="/parfume.png"
                 alt=""
@@ -70,7 +77,7 @@ function Categories() {
           </div>
           <div className="w-full h-full mt-5 lg:mt-10 category">
             <div className="w-full h-[240px] lg:h-[440px] overflow-hidden rounded-full">
-              <img
+              <Image
                 className="w-full h-full object-cover"
                 src="/parfume.png"
                 alt=""
