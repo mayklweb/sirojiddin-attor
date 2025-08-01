@@ -18,24 +18,24 @@ export default function Product() {
           </div>
           <div className="w-full lg:w-[64%] flex flex-col justify-between">
             <div className="w-full flex gap-4 lg:mt-10">
-              <h1 className="text-xl lg:text-5xl">
+              <h1 className="text-xl lg:text-6xl">
                 Mercedes Benz Woman In Red
               </h1>
-              <p className="text-lg lg:text-4xl text-nowrap">650 000 USZ</p>
+              <p className="text-lg lg:text-5xl text-nowrap">650 000 USZ</p>
             </div>
 
             <div>
-              <p className="text-lg">Для весеннего настроения!</p>
-              <h2>Характеристики</h2>
-              <p>Тип: . . . . . . . . . . . . . . . . . . . Парфюмерная вода</p>
-              <p>Текстура: . . . . . . . . . . . . . Владелец лицензии: Puig</p>
-              <p>
+              <p className="text-2xl">Для весеннего настроения!</p>
+              <h2 className="text-2xl">Характеристики</h2>
+              <p className="text-xl">Тип: . . . . . . . . . . . . . . . . . . . Парфюмерная вода</p>
+              <p className="text-xl">Текстура: . . . . . . . . . . . . . Владелец лицензии: Puig</p>
+              <p className="text-xl">
                 Верхние ноты: . . . . . . . . . . Шампанское, фруктовые ноты.
               </p>
-              <p>
+              <p className="text-xl">
                 Средние ноты: . . . . . . . . . . . . . . . Персиковый цвет.
               </p>
-              <p>
+              <p className="text-xl">
                 Низкие ноты: . . . . . . . . . . . . . . . . Древесные ноты.
               </p>
             </div>
@@ -53,7 +53,7 @@ export default function Product() {
                 100+
               </button>
             </div>
-            <button className="mt-4 w-full h-10 lg:h-14 bg-[#090909] text-white flex items-center justify-center pt-2">
+            <button className="mt-4 w-full h-10 lg:h-14 bg-[#00311f] text-white flex items-center justify-center pt-2">
               SAVATGA
             </button>
             <div>

@@ -70,7 +70,7 @@ function Brands() {
 
   return (
     <section>
-      <div className="overflow-hidden w-full py-5 lg:py-10 bg-white border-y-[1px] border-[#E6D8AD]">
+      <div className="overflow-hidden w-full py-6 lg:py-10 bg-white border-y-[1px] border-[#E6D8AD]">
         <div ref={containerRef} className="flex w-max gap-5 lg:gap-10">
           {[...logos, ...logos].map((logo, idx) => (
             <div

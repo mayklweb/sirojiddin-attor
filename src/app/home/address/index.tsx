@@ -20,7 +20,7 @@ function Address() {
       "https://api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY_HERE&lang=ru_RU";
     script.onload = () => {
       window.ymaps.ready(() => {
-        const initialCoords = [41.513266, 60.607986];
+        const initialCoords = [41.562452, 60.611706];
         const map = new window.ymaps.Map("map", {
           center: initialCoords,
           zoom: 16,
