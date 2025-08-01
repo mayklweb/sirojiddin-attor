@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import Image from "next/image";
-import Link from "next/link";
 
 function Categories() {
   useEffect(() => {
