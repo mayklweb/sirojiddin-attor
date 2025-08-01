@@ -1,13 +1,12 @@
 "use client";
 import gsap from "gsap";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ProductsDesktop from "./components/ProductsDesktop";
-import ProductsMobile from "./components/ProductsMobile";
+import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 
 function Products() {
-  const [isMobile, setIsMobile] = useState(false);
+  const images = Array(9).fill("/parfume.png");
 
 
   useEffect(() => {
@@ -29,22 +28,33 @@ function Products() {
     });
   }, []);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [isMobile]);
-
   return (
     <section className="w-full">
       <div className="container">
         <div className="mb-20">
-          <ProductsDesktop />
-          <ProductsMobile />
+          <div className="grid grid-cols-3 gap-5 lg:gap-10">
+            {images.map((src, index) => {
+              const columnCount = 3;
+              const col = index % columnCount;
+              let translateClass = "";
+
+              if (columnCount === 3) {
+                if (col === 0) translateClass = "-translate-y-1/6";
+                else if (col === 1) translateClass = "translate-y-1/6";
+                else if (col === 2) translateClass = "-translate-y-1/6";
+                else translateClass = "translate-y-1/6";
+              }
+
+              return (
+                <div
+                  key={index}
+                  className={`parfume bg-white rounded-full overflow-hidden flex items-center justify-center shadow-lg transform ${translateClass}`}
+                >
+                  <Image width={200} height={400} src={src} alt="perfume" className="w-full h-full object-cover" />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

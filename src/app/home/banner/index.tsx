@@ -1,5 +1,6 @@
 "use client";
 import gsap from "gsap";
+import { Link } from "lucide-react";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 
@@ -29,7 +30,7 @@ function Banner() {
 
     gsap.fromTo(
       ".blur-target",
-      { filter: "blur(100px)", opacity: 0 },
+      { filter: "blur(10px)", opacity: 0 },
       { filter: "blur(0px)", opacity: 1, duration: 3, ease: "power3.out" }
     );
   }, []);
@@ -40,14 +41,16 @@ function Banner() {
         <div className="w-full h-full flex items-center lg:items-end justify-center relative">
           <div className="w-10/12 lg:w-1/3 h-[60%] lg:h-[80%] rounded-t-full overflow-hidden relative flex z-[3]">
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-[1]">
-              <Image
-                ref={imageRef}
-                width={1000}
-                height={1000}
-                src="/parfume.png"
-                alt=""
-                className="w-full h-full object-contaain rounded-t-full absolute top-0 left-0 z-[1]"
-              />
+              {/* <Link href="/product"> */}
+                <Image
+                  ref={imageRef}
+                  width={1000}
+                  height={1000}
+                  src="/parfume.png"
+                  alt=""
+                  className="w-full h-full object-contaain rounded-t-full absolute top-0 left-0 z-[1]"
+                />
+              {/* </Link> */}
             </div>
           </div>
           <div className="w-full h-full absolute top-0 left-0 flex flex-col lg:flex-row items-center justify-around z-[3] mix-blend-difference">
@@ -60,7 +63,7 @@ function Banner() {
             </div>
             <div className="h-full flex items-center justify-between flex-col">
               <p></p>
-              <h1 className="mb-14 text-center font-cormorant-garamond text-2xl lg:text-6xl text-white italic tracking-tight blur-target">
+              <h1 className="hidden lg:block mb-14 text-center font-cormorant-garamond text-2xl lg:text-6xl text-white italic tracking-tight blur-target">
                 Nafosat va joziba <br /> har bir tomchisida!
               </h1>
             </div>

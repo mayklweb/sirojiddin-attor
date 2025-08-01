@@ -5,7 +5,7 @@ function ProductsDesktop() {
   const images = Array(9).fill("/parfume.png");
 
   return (
-    <div className="hidden lg:grid grid-cols-3 gap-10">
+    <div className="hidden grid-cols-3 gap-10">
       {images.map((src, index) => {
         const columnCount = 3; 
         const col = index % columnCount;
@@ -23,7 +23,7 @@ function ProductsDesktop() {
             key={index}
             className={`parfume bg-white rounded-full overflow-hidden flex items-center justify-center shadow-lg transform ${translateClass}`}
           >
-            <Image  src={src} alt="perfume" className="w-full h-full object-cover" />
+            <Image width={100} height={100} src={src} alt="perfume" className="w-full h-full object-cover" />
           </div>
         );
       })}

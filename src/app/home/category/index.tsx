@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import Image from "next/image";
+import Link from "next/link";
 
 function Categories() {
   useEffect(() => {
@@ -48,7 +49,7 @@ function Categories() {
           <div className="w-full h-full mt-5 lg:mt-10 category">
             <div className="w-full h-[240px] lg:h-[440px] overflow-hidden rounded-full">
               <Image
-                width={300} 
+                width={300}
                 height={400}
                 className="w-full h-full object-cover"
                 src="/parfume.png"
@@ -62,7 +63,7 @@ function Categories() {
           </div>
           <div className="w-full h-full category">
             <div className="w-full h-[240px] lg:h-[440px] overflow-hidden rounded-full">
-              <Image  
+              <Image
                 width={300}
                 height={400}
                 className="w-full h-full object-cover"
@@ -78,6 +79,8 @@ function Categories() {
           <div className="w-full h-full mt-5 lg:mt-10 category">
             <div className="w-full h-[240px] lg:h-[440px] overflow-hidden rounded-full">
               <Image
+                width={300}
+                height={400}
                 className="w-full h-full object-cover"
                 src="/parfume.png"
                 alt=""

@@ -42,10 +42,11 @@ const ProductCard = ({
 
 export default function Collections() {
   return (
-    <div className="w-full mt-32">
+    <div className="w-full mt-28">
+      <div className="w-full bg-[#00311f] h-[200px]"></div>
       <div className="container">
-        <div className="w-full flex">
-          <div className="w-2/10 p-4 hidden lg:block">
+        <div className="w-full flex mt-10">
+          <aside className="w-2/10 hidden lg:block">
             <div>
               <h1 className="font-black text-xl">CATEGORY</h1>
               <div className="pl-2">
@@ -58,7 +59,7 @@ export default function Collections() {
                 <p>Trends</p>
               </div>
             </div>
-            <div>
+            {/* <div>
               <h1 className="font-black text-xl">BRENDS</h1>
               <div className="pl-2">
                 <p>Dior</p>
@@ -66,7 +67,7 @@ export default function Collections() {
                 <p>Chanel</p>
                 <p>Zara</p>
               </div>
-            </div>
+            </div> */}
             <div>
               <h1 className="font-black text-xl">PRICE</h1>
               <div className="pl-2">
@@ -80,12 +81,12 @@ export default function Collections() {
                 <p>DIOR</p>
               </div>
             </div>
-          </div>
-          <div className="w-full lg:w-8/10 lg:px-5 grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 grid-rows-3">
+          </aside>
+          <main className="w-full lg:w-8/10 lg:px-5 grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 grid-rows-3">
             {items.map((item, index) => (
               <ProductCard key={index} {...item} />
             ))}
-          </div>
+          </main>
         </div>
       </div>
     </div>
