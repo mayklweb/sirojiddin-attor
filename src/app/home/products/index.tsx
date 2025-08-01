@@ -16,7 +16,7 @@ function Products() {
       gsap.from(parfume, {
         scale: 1.1,
         opacity: 0,
-        duration: 1.6,
+        duration: 1.5,
         ease: "power3.out",
         delay: index * 0.1,
         scrollTrigger: {
@@ -26,13 +26,40 @@ function Products() {
         },
       });
     });
+
+    gsap.fromTo(
+      ".info-blur",
+      {
+        filter: "blur(10px)",
+        opacity: 0,
+      },
+      {
+        filter: "blur(0px)",
+        opacity: 1,
+        duration: 2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".info-blur",
+          start: "top bottom",
+          toggleActions: "play none none none",
+        },
+      }
+    );
   }, []);
 
   return (
     <section className="w-full">
       <div className="container">
         <div className="mb-20">
-          <div className="grid grid-cols-3 gap-5 lg:gap-10">
+          <div className="w-full lg:w-[100%] flex lg:flex-col gap-5 items-center relative">
+            <h1
+              className="w-full lg:w-[1120px] text-[#00311f] text-4xl lg:text-8xl font-cormorant-garamond text-center italic tracking-tighter info-blur"
+            >
+              Sizning iforingiz — bu siz haqingizdagi birinchi taassurot va eng
+              oxirgi eslatma.
+            </h1>
+          </div>
+          <div className="mt-20 grid grid-cols-3 gap-5 lg:gap-10">
             {images.map((src, index) => {
               const columnCount = 3;
               const col = index % columnCount;

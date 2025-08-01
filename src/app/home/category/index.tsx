@@ -28,8 +28,8 @@ function Categories() {
   return (
     <section className="w-full mt-10">
       <div className="container">
-        <h1 className="text-4xl lg:text-6xl font-bold">MENS</h1>
-        <div className="mt-5 lg:mt-10 w-full grid grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-5">
+        {/* <h1 className="text-4xl lg:text-6xl font-bold">MENS</h1> */}
+        <div className="mt-5 lg:mt-10 w-full grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-10">
           <div className="w-full h-full category">
             <div className="w-full h-[240px] lg:h-[440px] overflow-hidden rounded-full">
               <Image

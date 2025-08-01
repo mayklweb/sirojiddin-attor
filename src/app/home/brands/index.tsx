@@ -70,13 +70,12 @@ function Brands() {
 
   return (
     <section>
-      <div className="overflow-hidden w-full py-10 bg-white border-y-[1px] border-[#E6D8AD]">
-        <div ref={containerRef} className="flex w-max gap-10 ">
-          {/* ✅ Duplicate logos to loop */}
+      <div className="overflow-hidden w-full py-5 lg:py-10 bg-white border-y-[1px] border-[#E6D8AD]">
+        <div ref={containerRef} className="flex w-max gap-5 lg:gap-10">
           {[...logos, ...logos].map((logo, idx) => (
             <div
               key={idx}
-              className="logo-item w-[200px] h-[80px] shrink-0 flex items-center justify-center"
+              className="logo-item w-[100px] lg:w-[200px] h-[40px] lg:h-[80px] shrink-0 flex items-center justify-center"
             >
               <Image
                 src={logo.logo}
