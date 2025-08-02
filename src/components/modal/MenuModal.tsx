@@ -79,7 +79,7 @@ function MenuModal() {
           top: "-100%",
           width: "20%",
           height: "0%",
-          duration: 1.6,
+          duration: 1.4,
           ease: "power2.in",
           onComplete: closeModal,
         });
