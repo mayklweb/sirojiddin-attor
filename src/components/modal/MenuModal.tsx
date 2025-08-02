@@ -30,7 +30,7 @@ function MenuModal() {
         top: "0%",
         width: "100%",
         height: "100%",
-        duration: 2,
+        duration: 1.8,
         ease: "power2.out",
 
       });
@@ -40,7 +40,7 @@ function MenuModal() {
         top: "-100%",
         width: "20%",
         height: "0%",
-        duration: 2.2,
+        duration: 2,
         ease: "power1.out",
       });
     }
