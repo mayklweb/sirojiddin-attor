@@ -4,7 +4,7 @@ import useModal from "@/store/modal";
 
 export default function Header() {
 
-  const { isOpen, openModal, closeModal } = useModal()
+  const { isOpen, openModal } = useModal()
   
   console.log(isOpen);
 
