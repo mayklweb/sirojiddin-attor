@@ -1,12 +1,19 @@
-import { Instagram, Search, ShoppingBag } from "lucide-react";
 import Link from "next/link";
+import { Instagram, Search, ShoppingBag } from "lucide-react";
+import useModal from "@/store/modal";
 
 export default function Header() {
+
+  const { isOpen, openModal, closeModal } = useModal()
+  
+  console.log(isOpen);
+
+
   return (
     <header className=" w-full bg-transparent fixed top-0 left-0 z-10 border-b-[1px] border-solid border-[#030303] before:absolute before:w-full before:h-full before:backdrop-blur-3xl">
       <div className="container">
         <div className="py-6 lg:py-10 flex bg-transparent items-center justify-between relative ">
-          <button className="flex items-center gap-3 cursor-pointer">
+          <button onClick={() => openModal()} className="flex items-center gap-3 cursor-pointer">
             <div
               className=" relative w-10 lg:w-12 h-2 focus:outline-none "
               aria-label="Toggle menu"

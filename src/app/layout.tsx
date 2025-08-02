@@ -9,6 +9,10 @@ import "./globals.css";
 import { Instagram, Search, ShoppingBag } from "lucide-react";
 import Link from "next/link";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
+import MenuModal from "@/components/modal/MenuModal";
+import useModal from "@/store/modal";
+import { createPortal } from "react-dom";
 
 const gayathri = Gayathri({
   variable: "--font-gayathri",
@@ -40,15 +44,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const { isOpen } = useModal()
+
   return (
     <html lang="en">
       <body
-        className={`${gayathri.variable} ${aboreto.variable} ${cormorantGaramond.variable} ${albertSans.variable} antialiased`}
+        className={`${gayathri.variable} ${aboreto.variable} ${cormorantGaramond.variable} ${albertSans.variable} antialiased ${isOpen && 'overflow-hidden'}`}
       >
         <div className="wrapper">
           <Header />
           <main className="flex flex-col main">{children}</main>
-          
+          <Footer />
+          {/* {isOpen && createPortal(, document.querySelector('.wrapper') as HTMLElement)} */}
+          <MenuModal />
         </div>
       </body>
     </html>
