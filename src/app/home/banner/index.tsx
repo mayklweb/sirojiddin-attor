@@ -41,14 +41,16 @@ function Banner() {
           <div className="w-10/12 lg:w-1/3 h-[60%] lg:h-[80%] rounded-t-full overflow-hidden relative flex z-[3]">
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-[1]">
               {/* <Link href="/product"> */}
-                <Image
-                  ref={imageRef}
-                  width={1000}
-                  height={1000}
-                  src="/parfume.png"
-                  alt=""
-                  className="w-full h-full object-contaain rounded-t-full absolute top-0 left-0 z-[1]"
-                />
+              <Image
+                priority={false}
+                loading="lazy"
+                ref={imageRef}
+                width={1000}
+                height={1000}
+                src="/parfume.png"
+                alt=""
+                className="w-full h-full object-contaain rounded-t-full absolute top-0 left-0 z-[1]"
+              />
               {/* </Link> */}
             </div>
           </div>

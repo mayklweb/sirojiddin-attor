@@ -63,7 +63,7 @@ function MenuModal() {
     } else {
       tl.to(headings, {
         y: -100,
-        duration: 0.6,
+        duration: 0.8,
       },
         0.8
       )
@@ -112,6 +112,8 @@ function MenuModal() {
               className="w-full h-full"
             >
               <Image
+                priority={false}
+                loading="lazy"
                 width={500}
                 height={600}
                 className="w-full h-full object-cover"

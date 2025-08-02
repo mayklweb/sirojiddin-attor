@@ -78,6 +78,8 @@ function Brands() {
               className="logo-item w-[100px] lg:w-[200px] h-[40px] lg:h-[80px] shrink-0 flex items-center justify-center"
             >
               <Image
+                priority={false}
+                loading="lazy"
                 src={logo.logo}
                 alt={`Brand ${idx}`}
                 width={200}

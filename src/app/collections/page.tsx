@@ -26,6 +26,8 @@ const ProductCard = ({
   <div className="w-full">
     <div className="w-full h-[70%] overflow-hidden rounded-t-full">
       <Image
+        priority={false}
+        loading="lazy"
         width={300}
         height={400}
         className="w-full h-full object-cover"

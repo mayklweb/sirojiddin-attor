@@ -77,7 +77,14 @@ function Products() {
                   key={index}
                   className={`parfume bg-white rounded-full overflow-hidden flex items-center justify-center shadow-lg transform ${translateClass}`}
                 >
-                  <Image width={200} height={400} src={src} alt="perfume" className="w-full h-full object-cover" />
+                  <Image
+                    priority={false}
+                    loading="lazy"
+                    width={200}
+                    height={400}
+                    src={src}
+                    alt="perfume"
+                    className="w-full h-full object-cover" />
                 </div>
               );
             })}

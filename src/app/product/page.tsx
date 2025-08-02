@@ -8,6 +8,8 @@ export default function Product() {
         <div className="w-full flex flex-col lg:flex-row gap-10">
           <div className="w-full lg:w-[36%] h-[70vh] lg:h-[84vh] rounded-t-full overflow-hidden">
             <Image
+              priority={false}
+              loading="lazy"
               width={500}
               height={600}
               // className="object-cover"
@@ -136,7 +138,7 @@ export default function Product() {
           </div>
         </div>
       </div>
-      <div  className="container">
+      <div className="container">
         <div>Recomended</div>
       </div>
     </section>

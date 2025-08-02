@@ -33,6 +33,8 @@ function Categories() {
           <div className="w-full h-full category">
             <div className="w-full h-[240px] lg:h-[440px] overflow-hidden rounded-full">
               <Image
+                priority={false}
+                loading="lazy"
                 width={300}
                 height={400}
                 className="w-full h-full object-cover"
@@ -48,6 +50,8 @@ function Categories() {
           <div className="w-full h-full mt-5 lg:mt-10 category">
             <div className="w-full h-[240px] lg:h-[440px] overflow-hidden rounded-full">
               <Image
+                priority={false}
+                loading="lazy"
                 width={300}
                 height={400}
                 className="w-full h-full object-cover"
@@ -63,6 +67,8 @@ function Categories() {
           <div className="w-full h-full category">
             <div className="w-full h-[240px] lg:h-[440px] overflow-hidden rounded-full">
               <Image
+                priority={false}
+                loading="lazy"
                 width={300}
                 height={400}
                 className="w-full h-full object-cover"
@@ -78,6 +84,8 @@ function Categories() {
           <div className="w-full h-full mt-5 lg:mt-10 category">
             <div className="w-full h-[240px] lg:h-[440px] overflow-hidden rounded-full">
               <Image
+                priority={false}
+                loading="lazy"
                 width={300}
                 height={400}
                 className="w-full h-full object-cover"
