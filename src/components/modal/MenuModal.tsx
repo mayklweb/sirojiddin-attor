@@ -22,7 +22,7 @@ function MenuModal() {
     if (isOpen) {
       gsap.set(modal, {
         top: "-100%",
-        width: "40%",
+        width: "20%",
         height: "0%",
       });
 
@@ -31,14 +31,14 @@ function MenuModal() {
         width: "100%",
         height: "100%",
         duration: 2,
-        ease: "power1.out",
+        ease: "power2.out",
 
       });
     } else {
       // Modal yopilishi
       gsap.to(modal, {
         top: "-100%",
-        width: "40%",
+        width: "20%",
         height: "0%",
         duration: 2.2,
         ease: "power1.out",
