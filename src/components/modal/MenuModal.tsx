@@ -14,8 +14,8 @@ function MenuModal() {
 
   useEffect(() => {
     const modal = modalRef.current;
-    const image = imageRef.current;
-    const texts = textsRef.current;
+    // const image = imageRef.current;
+    // const texts = textsRef.current;
 
     if (!modal) return;
 
