@@ -21,24 +21,27 @@ function MenuModal() {
 
     if (isOpen) {
       gsap.set(modal, {
+        top: "-100%",
         width: "60%",
         height: "0%",
       });
 
       gsap.to(modal, {
+        top: "0%",
         width: "100%",
         height: "100%",
-        duration: 1.2,
+        duration: 2,
         ease: "power2.out",
 
       });
     } else {
       // Modal yopilishi
       gsap.to(modal, {
+        top: "-100%",
         width: "60%",
         height: "0%",
-        duration: 1.2,
-        ease: "power2.inOut",
+        duration: 2,
+        ease: "power2.out",
       });
     }
   }, [isOpen]);
@@ -48,7 +51,7 @@ function MenuModal() {
   return (
     <div
       ref={modalRef}
-      className="w-full h-full fixed top-0 left-1/2 -translate-x-1/2 z-50 bg-[#00311f] overflow-hidden"
+      className={`w-full h-full fixed -top-full left-1/2 -translate-x-1/2 z-50 bg-[#00311f] overflow-hidden`}
     >
       <div className="container">
         <div className="w-full h-full py-20 flex items-center gap-20 relative">
