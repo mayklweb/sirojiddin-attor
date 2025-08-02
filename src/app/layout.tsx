@@ -6,13 +6,10 @@ import {
   Albert_Sans,
 } from "next/font/google";
 import "./globals.css";
-import { Instagram, Search, ShoppingBag } from "lucide-react";
-import Link from "next/link";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import MenuModal from "@/components/modal/MenuModal";
 import useModal from "@/store/modal";
-import { createPortal } from "react-dom";
 
 const gayathri = Gayathri({
   variable: "--font-gayathri",
