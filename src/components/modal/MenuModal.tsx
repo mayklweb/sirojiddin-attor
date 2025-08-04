@@ -57,14 +57,14 @@ function MenuModal() {
           headings,
           {
             y: "0%",
-            duration: 0.8,
+            duration: 1,
           },
           0.8
         );
     } else {
       tl.to(headings, {
         y: -100,
-        duration: 0.8,
+        duration: 1,
       },
         0.4
       )
@@ -82,7 +82,6 @@ function MenuModal() {
           height: "0%",
           duration: 1.4,
           ease: "power2.in",
-          // onComplete: closeModal,
         }, 0.2)
     }
 
