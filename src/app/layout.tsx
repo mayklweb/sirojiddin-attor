@@ -10,6 +10,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import MenuModal from "@/components/modal/MenuModal";
 import useModal from "@/store/modal";
+import CartModal from "@/components/modal/CartModal";
 
 const gayathri = Gayathri({
   variable: "--font-gayathri",
@@ -55,6 +56,7 @@ export default function RootLayout({
           <Footer />
           {/* {isOpen && createPortal(, document.querySelector('.wrapper') as HTMLElement)} */}
           <MenuModal />
+          <CartModal/>
         </div>
       </body>
     </html>

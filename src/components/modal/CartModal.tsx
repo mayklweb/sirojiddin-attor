@@ -7,8 +7,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useRef } from "react"
 
-function MenuModal() {
-  const { menuOpen, closeMenu } = useModal()
+function CartModal() {
+  const { cartOpen, closeCart } = useModal()
   const modalRef = useRef<HTMLDivElement>(null)
   const imageRef = useRef<HTMLDivElement>(null)
   const textsRef = useRef<HTMLDivElement>(null)
@@ -24,7 +24,7 @@ function MenuModal() {
 
     const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
 
-    if (menuOpen) {
+    if (cartOpen) {
       gsap.set(modal, {
         top: "-100%",
         width: "20%",
@@ -82,14 +82,17 @@ function MenuModal() {
           height: "0%",
           duration: 1.4,
           ease: "power2.in",
-          // onComplete: closeModal,
+          // onComplete: closeCart,
         }, 0.2)
     }
 
     return () => {
       tl.kill();
     };
-  }, [menuOpen]);
+  }, [cartOpen]);
+
+
+
 
 
   return (
@@ -100,7 +103,7 @@ function MenuModal() {
       <div className="container">
         <div className="w-full h-full py-20 flex items-center gap-20 relative overflow-hidden">
           <button
-            onClick={closeMenu}
+            onClick={closeCart}
             className="absolute top-6 right-6 cursor-pointer z-10"
           >
             <X size={44} color="#E6D8AD" strokeWidth={1} />
@@ -128,22 +131,22 @@ function MenuModal() {
             className="h-full max-h-[1000px] text-4xl lg:text-6xl text-[#E6D8AD] font-[600] flex flex-col justify-end gap-4"
           >
             <span className="overflow-hidden">
-              <Link onClick={() => closeMenu()} href={'/collections'} className="overflow-hidden">MENS</Link>
+              <Link onClick={() => closeCart()} href={'/collections'} className="overflow-hidden">MENS</Link>
             </span>
             <span className="overflow-hidden">
-              <Link onClick={() => closeMenu()} href={'/collections'} className="overflow-hidden">WOMENS</Link>
+              <Link onClick={() => closeCart()} href={'/collections'} className="overflow-hidden">WOMENS</Link>
             </span>
             <span className="overflow-hidden">
-              <Link onClick={() => closeMenu()} href={'/collections'} className="overflow-hidden">SUMMER</Link>
+              <Link onClick={() => closeCart()} href={'/collections'} className="overflow-hidden">SUMMER</Link>
             </span>
             <span className="overflow-hidden">
-              <Link onClick={() => closeMenu()} href={'/collections'} className="overflow-hidden">AUTUMN</Link>
+              <Link onClick={() => closeCart()} href={'/collections'} className="overflow-hidden">AUTUMN</Link>
             </span>
             <span className="overflow-hidden">
-              <Link onClick={() => closeMenu()} href={'/collections'} className="overflow-hidden">WINTER</Link>
+              <Link onClick={() => closeCart()} href={'/collections'} className="overflow-hidden">WINTER</Link>
             </span>
             <span className="overflow-hidden">
-              <Link onClick={() => closeMenu()} href={'/collections'} className="overflow-hidden">SPRING</Link>
+              <Link onClick={() => closeCart()} href={'/collections'} className="overflow-hidden">SPRING</Link>
             </span>
           </div>
         </div>
@@ -152,4 +155,4 @@ function MenuModal() {
   )
 }
 
-export default MenuModal
+export default CartModal
