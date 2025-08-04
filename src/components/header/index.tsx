@@ -4,7 +4,7 @@ import useModal from "@/store/modal";
 
 export default function Header() {
 
-  const { openMenu } = useModal()
+  const { openMenu, openCart } = useModal()
   
 
 
@@ -45,7 +45,7 @@ export default function Header() {
             <button className="cursor-pointer hidden lg:block">
               <Search width={26} height={26} strokeWidth={1.5} />
             </button>
-            <button className="cursor-pointer">
+            <button onClick={() => openCart()} className="cursor-pointer">
               <ShoppingBag width={26} height={26} strokeWidth={1.5} />
             </button>
 

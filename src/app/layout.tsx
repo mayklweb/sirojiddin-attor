@@ -54,9 +54,8 @@ export default function RootLayout({
           <Header />
           <main className="flex flex-col main">{children}</main>
           <Footer />
-          {/* {isOpen && createPortal(, document.querySelector('.wrapper') as HTMLElement)} */}
           <MenuModal />
-          <CartModal/>
+          <CartModal />
         </div>
       </body>
     </html>
