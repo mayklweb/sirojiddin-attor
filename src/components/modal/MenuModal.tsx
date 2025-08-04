@@ -65,7 +65,7 @@ function MenuModal() {
         y: -100,
         duration: 0.8,
       },
-        0.8
+        0.4
       )
         .to(
           image,
@@ -73,7 +73,7 @@ function MenuModal() {
             y: "-100%",
             duration: 1.2,
           },
-          0.6
+          0.2
         )
         .to(modal, {
           top: "-100%",
@@ -81,14 +81,16 @@ function MenuModal() {
           height: "0%",
           duration: 1.4,
           ease: "power2.in",
-          onComplete: closeModal,
-        });
+          // onComplete: closeModal,
+        }, 0.2)
     }
 
     return () => {
       tl.kill();
     };
   }, [isOpen]);
+
+
 
 
 
