@@ -43,7 +43,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  const { isOpen } = useModal()
 
   return (
     <html lang="en">
@@ -54,7 +53,6 @@ export default function RootLayout({
           <Header />
           <main className="flex flex-col main">{children}</main>
           <Footer />
-          {/* {isOpen && createPortal(, document.querySelector('.wrapper') as HTMLElement)} */}
           <MenuModal />
           <CartModal/>
         </div>
