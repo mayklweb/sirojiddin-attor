@@ -4,6 +4,7 @@ import useModal from "@/store/modal"
 import gsap from "gsap"
 import { X } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 import { useEffect, useRef } from "react"
 
 function MenuModal() {
@@ -17,7 +18,7 @@ function MenuModal() {
     const image = imageRef.current;
     const texts = textsRef.current;
 
-    const headings = texts?.querySelectorAll("h1");
+    const headings = texts?.querySelectorAll("Link");
 
     if (!modal || !image || !headings) return;
 
@@ -130,22 +131,22 @@ function MenuModal() {
             className="h-full max-h-[1000px] text-4xl lg:text-6xl text-[#E6D8AD] font-[600] flex flex-col justify-end gap-4"
           >
             <span className="overflow-hidden">
-              <h1 className="overflow-hidden">MENS</h1>
+              <Link onClick={() => closeModal()} href={'/collections'} className="overflow-hidden">MENS</Link>
             </span>
             <span className="overflow-hidden">
-              <h1 className="overflow-hidden">WOMENS</h1>
+              <Link onClick={() => closeModal()} href={'/collections'} className="overflow-hidden">WOMENS</Link>
             </span>
             <span className="overflow-hidden">
-              <h1 className="overflow-hidden">SUMMER</h1>
+              <Link onClick={() => closeModal()} href={'/collections'} className="overflow-hidden">SUMMER</Link>
             </span>
             <span className="overflow-hidden">
-              <h1 className="overflow-hidden">AUTUMN</h1>
+              <Link onClick={() => closeModal()} href={'/collections'} className="overflow-hidden">AUTUMN</Link>
             </span>
             <span className="overflow-hidden">
-              <h1 className="overflow-hidden">WINTER</h1>
+              <Link onClick={() => closeModal()} href={'/collections'} className="overflow-hidden">WINTER</Link>
             </span>
             <span className="overflow-hidden">
-              <h1 className="overflow-hidden">SPRING</h1>
+              <Link onClick={() => closeModal()} href={'/collections'} className="overflow-hidden">SPRING</Link>
             </span>
           </div>
         </div>

@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 
 function Products() {
@@ -77,14 +78,16 @@ function Products() {
                   key={index}
                   className={`parfume bg-white rounded-full overflow-hidden flex items-center justify-center shadow-lg transform ${translateClass}`}
                 >
-                  <Image
-                    priority={false}
-                    loading="lazy"
-                    width={200}
-                    height={400}
-                    src={src}
-                    alt="perfume"
-                    className="w-full h-full object-cover" />
+                  <Link className="w-full h-full" href={`/product`}>
+                    <Image
+                      priority={false}
+                      loading="lazy"
+                      width={200}
+                      height={400}
+                      src={src}
+                      alt="perfume"
+                      className="w-full h-full object-cover" />
+                  </Link>
                 </div>
               );
             })}

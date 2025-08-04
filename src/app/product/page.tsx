@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Product() {
   return (
-    <section className="w-full mt-5 lg:mt-32">
+    <section className="w-full mt-24 lg:mt-32">
       <div className="container">
         <div className="w-full flex flex-col lg:flex-row gap-10">
           <div className="w-full lg:w-[36%] h-[70vh] lg:h-[84vh] rounded-t-full overflow-hidden">
