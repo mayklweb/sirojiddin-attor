@@ -43,16 +43,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
+  const { menuOpen } = useModal()
 
   return (
     <html lang="en">
       <body
-        className={`${gayathri.variable} ${aboreto.variable} ${cormorantGaramond.variable} ${albertSans.variable} antialiased ${isOpen && 'overflow-y-hidden'}`}
+        className={`${gayathri.variable} ${aboreto.variable} ${cormorantGaramond.variable} ${albertSans.variable} antialiased ${menuOpen && 'overflow-y-hidden'}`}
       >
         <div className="wrapper">
           <Header />
           <main className="flex flex-col main">{children}</main>
           <Footer />
+          {/* {isOpen && createPortal(, document.querySelector('.wrapper') as HTMLElement)} */}
           <MenuModal />
           <CartModal/>
         </div>
