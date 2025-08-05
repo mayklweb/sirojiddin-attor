@@ -19,28 +19,14 @@ export default function Product() {
             />
           </div>
           <div className="w-full lg:w-[64%] flex flex-col justify-between">
-            <div className="w-full flex gap-4 lg:mt-10">
-              <h1 className="text-xl lg:text-6xl">
+            <div className="w-full lg:mt-10">
+              <h1 className="text-2xl lg:text-6xl">
                 Mercedes Benz Woman In Red
               </h1>
-              <p className="text-lg lg:text-5xl text-nowrap">650 000 USZ</p>
+              <p className="text-xl lg:text-5xl text-nowrap">650 000 USZ</p>
             </div>
 
-            <div>
-              <p className="text-2xl">Для весеннего настроения!</p>
-              <h2 className="text-2xl">Характеристики</h2>
-              <p className="text-xl">Тип: . . . . . . . . . . . . . . . . . . . Парфюмерная вода</p>
-              <p className="text-xl">Текстура: . . . . . . . . . . . . . Владелец лицензии: Puig</p>
-              <p className="text-xl">
-                Верхние ноты: . . . . . . . . . . Шампанское, фруктовые ноты.
-              </p>
-              <p className="text-xl">
-                Средние ноты: . . . . . . . . . . . . . . . Персиковый цвет.
-              </p>
-              <p className="text-xl">
-                Низкие ноты: . . . . . . . . . . . . . . . . Древесные ноты.
-              </p>
-            </div>
+
             <div className="flex gap-4 mt-4">
               <button className="border-[1px] border-solid border-black p-4">
                 30
@@ -58,7 +44,22 @@ export default function Product() {
             <button className="mt-4 w-full h-10 lg:h-14 bg-[#00311f] text-white flex items-center justify-center pt-2">
               SAVATGA
             </button>
-            <div>
+            <div className="mt-10">
+              <p className="text-lg lg:text-2xl">Для весеннего настроения!</p>
+              <h2 className="text-xl">Характеристики</h2>
+              <p className="text-lg">Тип: . . . . . . . . . . . . . . . . . . . Парфюмерная вода</p>
+              <p className="text-lg">Текстура: . . . . . . . . . . . . . Владелец лицензии: Puig</p>
+              <p className="text-lg">
+                Верхние ноты: . . . . . . . . . . Шампанское, фруктовые ноты.
+              </p>
+              <p className="text-lg">
+                Средние ноты: . . . . . . . . . . . . . . . Персиковый цвет.
+              </p>
+              <p className="text-lg">
+                Низкие ноты: . . . . . . . . . . . . . . . . Древесные ноты.
+              </p>
+            </div>
+            {/* <div>
               <div className="flex gap-6">
                 <div className="flex flex-col items-center justify-center gap-4">
                   <svg
@@ -134,7 +135,7 @@ export default function Product() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
