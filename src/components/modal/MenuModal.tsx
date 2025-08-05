@@ -100,7 +100,7 @@ function MenuModal() {
         <div className="w-full h-full py-20 flex items-center gap-20 relative overflow-hidden">
           <button
             onClick={closeMenu}
-            className="absolute top-6 right-6 cursor-pointer z-10"
+            className="absolute top-6 right-0 cursor-pointer z-10"
           >
             <X size={44} color="#E6D8AD" strokeWidth={1} />
           </button>

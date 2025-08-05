@@ -4,9 +4,14 @@ function About() {
   return (
     <section>
       <div className="container">
-        <div className='pt-20'>
-          <h1 className="text-[#DAC289] text-center text-6xl font-bold lg:text-6xl font-cormorant-garamond"><span className="italic">ABOUT</span> <span>  </span> <span>  US</span></h1>
-          <div></div>
+        <div className='pt-20 mt-40'>
+          <h1 className="text-[#DAC289] text-center text-6xl font-bold lg:text-6xl font-cormorant-garamond"><span className="italic">BIZ</span> <span>  </span>  <span>  HAQIMIZDA</span></h1>
+          <div className='w-full flex flex-col mt-10 items-center'>
+            <h3 className='w-full lg:w-[1024px] text-center text-5xl font-cormorant-garamond'>SIROJIDDIN ATTOR — bu original va sifatli parfumlar uyi. Biz dunyo brendlarini bir joyga jamlab, sizga o‘ziga xos va unutilmas iforlarni taqdim etamiz. Har bir mijozimizga e’tiborli yondashuv va ishonchli xizmat kafolatlanadi.</h3>
+            <div className='w-full mt-10 rounded-full overflow-hidden'>
+              <img className='w-full h-full object-contain' src="/IMG_7295.webp" alt="" />
+            </div>
+          </div>
         </div>
       </div>
     </section>

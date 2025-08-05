@@ -1,7 +1,6 @@
 "use client";
 import {
   Aboreto,
-  Gayathri,
   Cormorant_Garamond,
   Albert_Sans,
 } from "next/font/google";
@@ -12,11 +11,6 @@ import MenuModal from "@/components/modal/MenuModal";
 import useModal from "@/store/modal";
 import CartModal from "@/components/modal/CartModal";
 
-const gayathri = Gayathri({
-  variable: "--font-gayathri",
-  subsets: ["latin"],
-  weight: ["100", "400", "700"],
-});
 
 const aboreto = Aboreto({
   variable: "--font-aboreto",
@@ -48,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${gayathri.variable} ${aboreto.variable} ${cormorantGaramond.variable} ${albertSans.variable} antialiased ${menuOpen && 'overflow-y-hidden'}`}
+        className={`${aboreto.variable} ${cormorantGaramond.variable} ${albertSans.variable} antialiased ${menuOpen && 'overflow-y-hidden'}`}
       >
         <div className="wrapper">
           <Header />

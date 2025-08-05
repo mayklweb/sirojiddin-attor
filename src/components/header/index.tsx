@@ -27,13 +27,13 @@ export default function Header() {
                 ></span>
               </div>
             </div>
-            <span className="text-xl mb-2 hidden lg:block">MENU</span>
+            <span className="text-base font-semibold mb-2 hidden lg:block">MENU</span>
           </button>
 
           <Link href="/">
             <div className="flex flex-col items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
               <h1 className="font-aboreto text-lg lg:text-2xl text-[#]">
-                SUROJIDDIN
+                SIROJIDDIN
               </h1>
               <p className="font-aboreto text-lg lg:text-2xl text-[#030303]">
                 ATTOR
