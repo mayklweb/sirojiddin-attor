@@ -15,7 +15,7 @@ function FilterModal() {
 
       <div className="absolute top-0 right-0 h-full w-full sm:w-[500px] z-[52]">
         <div
-          className={`h-full  flex flex-col bg-[#00311f] transition-all duration-700 ease-in-out ${filterOpen ? "translate-y-0" : "translate-y-full"
+          className={`h-full  flex flex-col bg-[#00311f] transition-all duration-700 ease-in-out ${filterOpen ? "translate-y-1/4" : "translate-y-full"
             }`}
         >
           <div className="w-full p-6 flex items-center justify-between">
