@@ -1,12 +1,20 @@
+"use client"
 import Link from "next/link";
 import { Instagram, Search, ShoppingBag } from "lucide-react";
 import useModal from "@/store/modal";
+import { useEffect } from "react";
 
 export default function Header() {
 
-  const { openMenu, openCart } = useModal()
-  
+  const { menuOpen, cartOpen, openMenu, openCart } = useModal()
 
+  useEffect(() => {
+    const body = document.querySelector("body") as HTMLElement | null;
+
+    if (body) {
+      body.style.overflowY = (menuOpen || cartOpen) ? "hidden" : "auto";
+    }
+  }, [menuOpen, cartOpen]); // 🔁 endi o‘zgarishlarga reaksiya qiladi
 
   return (
     <header className=" w-full bg-transparent fixed top-0 left-0 z-10 border-b-[1px] border-solid border-[#030303] before:absolute before:w-full before:h-full before:backdrop-blur-3xl">

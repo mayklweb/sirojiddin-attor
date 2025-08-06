@@ -1,3 +1,5 @@
+"use client"
+import useModal from "@/store/modal";
 import Image from "next/image";
 import React from "react";
 
@@ -43,6 +45,8 @@ const ProductCard = ({
 );
 
 export default function Collections() {
+
+  const {openFilter} = useModal()
   return (
     <div className="w-full mt-[80px] lg:mt-28">
       <div className="w-full bg-[#00311f] h-[0] lg:h-[200px]"></div>
@@ -87,7 +91,7 @@ export default function Collections() {
           <main className="w-full lg:w-8/10">
             <div className="w-full mb-6 flex items-center justify-between">
               <h3 className="text-3xl">Collections</h3>
-              <button className="text-[#fdfdfd] text-base px-5 py-2 bg-[#00311f]">Filter</button>
+              <button onClick={() => openFilter()} className="text-[#fdfdfd] text-base px-5 py-2 bg-[#00311f]">Filter</button>
             </div>
             <div className="w-full full lg:px-5 grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 grid-rows-3">
               {items.map((item, index) => (
