@@ -11,8 +11,6 @@ import CartModal from "@/components/modal/CartModal";
 import type { Metadata } from "next";
 import FilterModal from "@/components/modal/FilterModal";
 
-
-
 const aboreto = Aboreto({
   variable: "--font-aboreto",
   subsets: ["latin"],
@@ -37,7 +35,6 @@ export const metadata: Metadata = {
 };
 
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -51,11 +48,11 @@ export default function RootLayout({
       >
         <div className="wrapper">
           <Header />
-          <main className="flex flex-col main">{children}</main>
+          <main className="main">{children}</main>
           <Footer />
           <MenuModal />
           <CartModal />
-          <FilterModal/>
+          <FilterModal />
         </div>
       </body>
     </html>

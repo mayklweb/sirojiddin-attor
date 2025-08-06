@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import Image from "next/image";
+import Link from "next/link";
 
 function Categories() {
   useEffect(() => {
@@ -31,72 +32,77 @@ function Categories() {
         {/* <h1 className="text-4xl lg:text-6xl font-bold">MENS</h1> */}
         <div className="mt-5 lg:mt-10 w-full grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-10">
           <div className="w-full h-full category">
-            <div className="w-full h-[240px] lg:h-[440px] overflow-hidden rounded-full">
-              <Image
-                priority={false}
-                loading="lazy"
-                width={300}
-                height={400}
-                className="w-full h-full object-cover"
-                src="/parfume.png"
-                alt=""
-              />
-            </div>
-            <div className="mt-2 flex flex-col items-center justify-between">
-              <h3 className="text-[14px] lg:text-xl">CHANEL</h3>
-              <p className="text-[14px] lg:text-xl">1 000 000 USZ</p>
-            </div>
+            <Link href={'/collections'}>
+
+              <div className="w-full h-[240px] lg:h-[440px] overflow-hidden rounded-full">
+                <Image
+                  priority={false}
+                  loading="lazy"
+                  width={300}
+                  height={400}
+                  className="w-full h-full object-cover"
+                  src="/parfume.png"
+                  alt=""
+                />
+              </div>
+              <div className="mt-2 flex flex-col items-center justify-between">
+                <h3 className="text-[14px] lg:text-xl">CHANEL</h3>
+              </div>
+            </Link>
           </div>
           <div className="w-full h-full mt-5 lg:mt-10 category">
-            <div className="w-full h-[240px] lg:h-[440px] overflow-hidden rounded-full">
-              <Image
-                priority={false}
-                loading="lazy"
-                width={300}
-                height={400}
-                className="w-full h-full object-cover"
-                src="/parfume.png"
-                alt=""
-              />
-            </div>
-            <div className="mt-2 flex flex-col items-center justify-between ">
-              <h3 className="text-[14px] lg:text-xl">BLEU DE CHANEL</h3>
-              <p className="text-[14px] lg:text-xl">1 000 000 USZ</p>
-            </div>
+            <Link href={'/collections'}>
+              <div className="w-full h-[240px] lg:h-[440px] overflow-hidden rounded-full">
+                <Image
+                  priority={false}
+                  loading="lazy"
+                  width={300}
+                  height={400}
+                  className="w-full h-full object-cover"
+                  src="/parfume.png"
+                  alt=""
+                />
+              </div>
+              <div className="mt-2 flex flex-col items-center justify-between ">
+                <h3 className="text-[14px] lg:text-xl">BLEU DE CHANEL</h3>
+              </div>
+            </Link>
           </div>
           <div className="w-full h-full category">
-            <div className="w-full h-[240px] lg:h-[440px] overflow-hidden rounded-full">
-              <Image
-                priority={false}
-                loading="lazy"
-                width={300}
-                height={400}
-                className="w-full h-full object-cover"
-                src="/parfume.png"
-                alt=""
-              />
-            </div>
-            <div className="mt-2 flex flex-col items-center justify-between">
-              <h3 className="text-[14px] lg:text-xl">CHANEL</h3>
-              <p className="text-[14px] lg:text-xl">1 000 000 USZ</p>
-            </div>
+            <Link href={'/collections'}>
+              <div className="w-full h-[240px] lg:h-[440px] overflow-hidden rounded-full">
+                <Image
+                  priority={false}
+                  loading="lazy"
+                  width={300}
+                  height={400}
+                  className="w-full h-full object-cover"
+                  src="/parfume.png"
+                  alt=""
+                />
+              </div>
+              <div className="mt-2 flex flex-col items-center justify-between">
+                <h3 className="text-[14px] lg:text-xl">CHANEL</h3>
+              </div>
+            </Link>
           </div>
           <div className="w-full h-full mt-5 lg:mt-10 category">
-            <div className="w-full h-[240px] lg:h-[440px] overflow-hidden rounded-full">
-              <Image
-                priority={false}
-                loading="lazy"
-                width={300}
-                height={400}
-                className="w-full h-full object-cover"
-                src="/parfume.png"
-                alt=""
-              />
-            </div>
-            <div className="mt-2 flex flex-col items-center justify-between">
-              <h3 className="text-[14px] lg:text-xl">CHANEL</h3>
-              <p className="text-[14px] lg:text-xl">1 000 000 USZ</p>
-            </div>
+            <Link href={'/collections'}>
+              <div className="w-full h-[240px] lg:h-[440px] overflow-hidden rounded-full">
+                <Image
+                  priority={false}
+                  loading="lazy"
+                  width={300}
+                  height={400}
+                  className="w-full h-full object-cover"
+                  src="/parfume.png"
+                  alt=""
+                />
+              </div>
+              <div className="mt-2 flex flex-col items-center justify-between">
+                <h3 className="text-[14px] lg:text-xl">CHANEL</h3>
+              </div>
+            </Link>
           </div>
         </div>
       </div>

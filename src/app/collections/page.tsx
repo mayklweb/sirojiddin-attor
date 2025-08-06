@@ -89,7 +89,7 @@ export default function Collections() {
             </div>
           </aside>
           <main className="w-full lg:w-8/10">
-            <div className="w-full mb-6 flex items-center justify-between">
+            <div className="w-full my-6 flex items-center justify-between lg:hidden">
               <h3 className="text-3xl">Collections</h3>
               <button onClick={() => openFilter()} className="text-[#fdfdfd] text-base px-5 py-2 bg-[#00311f]">Filter</button>
             </div>
