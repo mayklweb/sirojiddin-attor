@@ -7,7 +7,6 @@ import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import MenuModal from "@/components/modal/MenuModal";
-import useModal from "@/store/modal";
 import CartModal from "@/components/modal/CartModal";
 import type { Metadata } from "next";
 import FilterModal from "@/components/modal/FilterModal";
