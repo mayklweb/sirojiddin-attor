@@ -41,7 +41,7 @@ export default function Product() {
                 100+
               </button>
             </div>
-            <button className="mt-4 w-full h-10 lg:h-14 bg-[#00311f] text-white flex items-center justify-center pt-2">
+            <button className="mt-4 w-full py-4 bg-[#00311f] text-white flex items-center justify-center">
               SAVATGA
             </button>
             <div className="mt-10">
