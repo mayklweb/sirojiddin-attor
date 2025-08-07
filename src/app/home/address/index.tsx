@@ -12,7 +12,7 @@ declare global {
 function Address() {
   const mapRef = useRef<object | null>(null);
   const placemarkRef = useRef<object | null>(null);
-  
+
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -49,7 +49,7 @@ function Address() {
             id="map"
             className="w-full h-full mt-5 absolute"
           ></div>
-          <div className="w-full h-full mt-5 pointer-events-none shadow-[inset_0px_0px_20px_40px_#fdfdfd]  absolute"></div>
+          <div className="w-full h-full mt-5  shadow-[inset_0px_0px_20px_40px_#fdfdfd]  absolute"></div>
         </div>
       </div>
     </section>
