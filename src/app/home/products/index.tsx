@@ -51,7 +51,7 @@ function Products() {
   return (
     <section className="w-full">
       <div className="container">
-        <div className="mt-20 flex flex-col gap-40 lg:gap-60">
+        <div className="mt-12 lg:mt-20 flex flex-col gap-32 lg:gap-60">
           <div className="w-full lg:w-[100%] flex lg:flex-col gap-5 items-center relative">
             <h1
               className="w-full lg:w-[1120px] text-[#00311f] text-4xl lg:text-8xl font-cormorant-garamond text-center italic tracking-tighter info-blur"
