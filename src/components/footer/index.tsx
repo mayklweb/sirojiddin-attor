@@ -15,24 +15,15 @@ function Footer() {
             </p>
           </div>
 
-          <div className="flex gap-6 text-4xl">
-            <div>
-              <p>MEN</p>
-              <p>WOMEN</p>
-              <p>SPRING</p>
-            </div>
-            <div>
-              <p>SUMMER</p>
-              <p>AUTUMN</p>
-              <p>Winter</p>
-            </div>
-          </div>
 
-          <div className="flex flex-col items-center gap-4 text-4xl">
+          <div className="flex flex-col items-center gap-2 text-lg">
             <Link href={'https://www.instagram.com/sirojiddin_attor/'} >Instagram</Link>
             <Link href={'https://telegram.com'} >Telegram</Link>
             <p>+998 99 999 99 99</p>
           </div>
+        </div>
+        <div className='w-full mt-6 pt-6 border-t-[1px] border-solid border-[#E6D8AD]'>
+          <p className='text-center text-[#fdfdfd]'>© 2025 MAYKLS STUDIO</p>
         </div>
       </div>
     </footer>
