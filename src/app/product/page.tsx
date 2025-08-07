@@ -46,16 +46,16 @@ export default function Product() {
             </button>
             <div className="mt-10">
               <p className="text-lg lg:text-2xl">Для весеннего настроения!</p>
-              <h2 className="text-xl">Характеристики</h2>
-              <p className="text-lg">Тип: . . . . . . . . . . . . . . . . . . . Парфюмерная вода</p>
-              <p className="text-lg">Текстура: . . . . . . . . . . . . . Владелец лицензии: Puig</p>
-              <p className="text-lg">
+              <h2 className="text-lg lg:text-xl">Характеристики</h2>
+              <p className="text-base lg:text-lg">Тип: . . . . . . . . . . . . . . . . . . . Парфюмерная вода</p>
+              <p className="text-base lg:text-lg">Текстура: . . . . . . . . . . . . . Владелец лицензии: Puig</p>
+              <p className="text-base lg:text-lg">
                 Верхние ноты: . . . . . . . . . . Шампанское, фруктовые ноты.
               </p>
-              <p className="text-lg">
+              <p className="text-base lg:text-lg">
                 Средние ноты: . . . . . . . . . . . . . . . Персиковый цвет.
               </p>
-              <p className="text-lg">
+              <p className="text-base lg:text-lg">
                 Низкие ноты: . . . . . . . . . . . . . . . . Древесные ноты.
               </p>
             </div>
