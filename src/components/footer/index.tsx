@@ -16,7 +16,7 @@ function Footer() {
           </div>
 
 
-          <div className="flex flex-col items-center gap-2 text-lg">
+          <div className="flex flex-col lg:flex-row items-center gap-2 lg:gap-6 text-lg">
             <Link href={'https://www.instagram.com/sirojiddin_attor/'} >Instagram</Link>
             <Link href={'https://telegram.com'} >Telegram</Link>
             <p>+998 99 999 99 99</p>
