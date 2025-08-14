@@ -8,7 +8,7 @@ function Footer() {
         <div className="w-full text-[#fdfdfd] flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-0">
           <div className="flex flex-col items-center">
             <h1 className="font-aboreto text-4xl lg:text-2xl text-[#]">
-              SUROJIDDIN
+              SiROJIDDIN
             </h1>
             <p className="font-aboreto text-4xl lg:text-2xl">
               ATTOR
