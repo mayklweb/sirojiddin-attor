@@ -4,13 +4,12 @@ import { Banner, About, Address, Brands, Categories, Info, Products } from "./ho
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
-  const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
     // Barcha resurslar yuklanishini kutamiz
     const handleLoad = () => {
       setLoading(false);
-      setTimeout(() => setShowContent(true), 10); // smooth transition
+      setTimeout(() => 10); // smooth transition
     };
 
     if (document.readyState === "complete") {
