@@ -24,9 +24,9 @@ export default function Home() {
   if (loading) {
     return (
       <div className="w-screen h-screen flex items-center justify-center fixed z-[100] bg-[#00311f]">
-        <div className="flex flex-col items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="text-[#E6D8AD] flex flex-col items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <h1 className="font-aboreto text-2xl lg:text-4xl">SIROJIDDIN</h1>
-          <p className="font-aboreto text-2xl lg:text-4xl text-[#E6D8AD]">
+          <p className="font-aboreto text-2xl lg:text-4xl">
             ATTOR
           </p>
         </div>
