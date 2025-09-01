@@ -10,7 +10,7 @@ export default function Home() {
     // Barcha resurslar yuklanishini kutamiz
     const handleLoad = () => {
       setLoading(false);
-      setTimeout(() => setShowContent(true), 200); // smooth transition
+      setTimeout(() => setShowContent(true), 10); // smooth transition
     };
 
     if (document.readyState === "complete") {
@@ -23,7 +23,7 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="w-screen h-screen flex items-center justify-center fixed z-[100] bg-[#00311f]">
+      <div className={`w-screen h-screen flex items-center justify-center fixed z-[100] bg-[#00311f] `}>
         <div className="text-[#E6D8AD] flex flex-col items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <h1 className="font-aboreto text-2xl lg:text-4xl">SIROJIDDIN</h1>
           <p className="font-aboreto text-2xl lg:text-4xl">
@@ -35,11 +35,7 @@ export default function Home() {
   }
 
   return (
-    <div
-      className={`transition-all duration-[4s] ${
-        showContent ? "opacity-100" : "opacity-0"
-      }`}
-    >
+    <>
       <Banner />
       <Brands />
       <Categories />
@@ -47,6 +43,6 @@ export default function Home() {
       <Products />
       <About />
       <Address />
-    </div>
+    </>
   );
 }
