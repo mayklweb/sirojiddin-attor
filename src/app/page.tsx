@@ -10,7 +10,7 @@ export default function Home() {
     // Barcha resurslar yuklanishini kutamiz
     const handleLoad = () => {
       setLoading(false);
-      setTimeout(() => setShowContent(true), 100); // smooth transition
+      setTimeout(() => setShowContent(true), 900); // smooth transition
     };
 
     if (document.readyState === "complete") {
@@ -36,7 +36,7 @@ export default function Home() {
 
   return (
     <div
-      className={`transition-opacity duration-700 ${
+      className={`transition-opacity duration-1000 ${
         showContent ? "opacity-100" : "opacity-0"
       }`}
     >
