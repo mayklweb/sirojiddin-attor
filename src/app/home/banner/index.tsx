@@ -5,6 +5,7 @@ import React, { useEffect, useRef } from "react";
 
 function Banner() {
   const imageRef = useRef<HTMLImageElement | null>(null);
+  
   useEffect(() => {
     const image = imageRef.current;
     if (!image) return;
