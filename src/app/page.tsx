@@ -23,10 +23,10 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="w-screen h-screen flex items-center justify-center fixed z-[100] bg-white">
+      <div className="w-screen h-screen flex items-center justify-center fixed z-[100] bg-[#00311f]">
         <div className="flex flex-col items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <h1 className="font-aboreto text-lg lg:text-4xl">SIROJIDDIN</h1>
-          <p className="font-aboreto text-lg lg:text-4xl text-[#030303]">
+          <p className="font-aboreto text-lg lg:text-4xl text-[#E6D8AD]">
             ATTOR
           </p>
         </div>
